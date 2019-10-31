@@ -5,9 +5,9 @@ from mixed import Mixed
 class Food():
   """Base class for all food in shopping list."""
   #aisle where food is located in store
-  self.aisle = ''
   
-  def __init__(self, amount=0, name=''):
+  def __init__(self, amount=0, name='', aisle =''):
+    self.aisle = aisle
     self.amount = Mixed(amount)
     self.name = name;
     #ie 14.5 oz. can  
@@ -349,7 +349,7 @@ class RedBellPepper(Food):
     
   def __str__(self):
     return Super.__str__() + " " + self.food
-
+#needed?
 class RainbowPeppers(Food):
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
@@ -641,6 +641,7 @@ American Standard      American Standard             Metric
    4 cups or 1 quart        32 fl. oz.              1000 ml or 1 liter
    1 gallon                 128 fl. oz.             4 liters
  
+
 Dry Measure Equivalents
  	 	 	 
  3 teaspoons	 1 tablespoon	 1/2 ounce	 14.3 grams
