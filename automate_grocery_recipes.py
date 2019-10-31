@@ -65,6 +65,7 @@ food_list = []
 store_list = []
 
 #these are the store aisles that will be used to eventually sort grocery list
+#or ask user to define aisles
 aisles = [['produce'],['meat', 'cheese', 'lunch meat',], ['dairy', 'eggs', 'juice', 'pies', 'yogurt', 'butter'],
           ['frozen vegetables'], ['housewares'], ['cereal', 'coffee/tea'], ['baking', 'spices', 'PBJ'],
           ['boxed dinner', 'canned meat', 'pasta/sauce'], ['soup', 'mexican', 'asian'], 
@@ -130,15 +131,25 @@ while new_item.upper() != "DONE":
         print(recipes)
     elif new_item.upper() != "DONE":
         print("Your item is invalid, try again. Type HELP to see all items.")
-        
-for item in shopping_list:
-    print(item)
 
-counter = cleanPrint(shopping_list, True)
-print("\nAlso Stock your Pantry with these items:\n")
-cleanPrint(recipes.always_keep_stocked)
+#convert string to food classes
+for ingredient in shopping_list:
+    pass
+'''use dictionary here
+   d[parse[1]] = class(parse[0][0],
+Parse[0][1]). Add if included'''
+    #add tons of if statements
+
+        
+#for item in shopping_list:
+#    print(item)
+
+#counter = cleanPrint(shopping_list, True)
+#print("\nAlso Stock your Pantry with these items:\n")
+#cleanPrint(recipes.always_keep_stocked)
 
 #Count all of the ingredients after adding them up.
+'''
 total = 0
 for recipe in counter.keys():
     total = total + counter[recipe]
@@ -147,3 +158,4 @@ print('* items are not needed until day of cooking.')
 
 print("There are " + str(total) + " ingredients to buy. Not including pantry items.")
 #print("There are " + str(len(counter.keys())) + " ingredients to buy. Not including pantry items.")
+'''
