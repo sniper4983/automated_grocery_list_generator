@@ -135,12 +135,15 @@ while new_item.upper() != "DONE":
 #convert string to food classes
 for ingredient in shopping_list:
     pass
-'''use dictionary here
+'''use dictionary here foodlist
    d[parse[1]] = class(parse[0][0],
 Parse[0][1]). Add if included'''
     #add tons of if statements
-
-        
+for food in d.keys():
+    pass#d[food].aisle
+ # == aisle up above enter in list?
+#complete list of obj ingredients store list
+#Sort this list based on aisle        
 #for item in shopping_list:
 #    print(item)
 
