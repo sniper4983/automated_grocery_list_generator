@@ -41,7 +41,7 @@ def parse(name, foodDict):
         lhs = name[:inc]
         rhs = name[inc:]
 
-    rhs foodList[1]
+    rhs = foodList[1]
 
     name = lhs
     rhs = ''
