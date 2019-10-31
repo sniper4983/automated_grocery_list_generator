@@ -30,6 +30,9 @@ def cleanPrint(aList, Dict=False):
                 
     return counterDict
 
+def firstTimeEntry(food, dict):
+    return not (food in dict)
+
 def parse(name, foodDict):
     foodList = [None] * 2 
     rhs = ''
@@ -59,7 +62,7 @@ recipes = Recipe()
 border = "="*11
 counterDict = {}
 new_item = ''
-Grocerys = {}
+grocerys = {}
 shopping_list = []
 food_list = []
 store_list = []
@@ -134,15 +137,16 @@ while new_item.upper() != "DONE":
 
 #convert string to food classes
 for ingredient in shopping_list:
+    ingredient_Tuple = parse(ingredient)
+    if ingredient_Tuple[1] == 'chicken breast':
+        if firstTimeEntry('chicken breast'):
+            groceries['chicken breast'] = ChickenBreast(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries['chicken breast'] =  groceries['chicken breast'] + ChickenBreast(ingredient_Tuple[0], ingredient_Tuple[1])
+   elif ingredient_Tuple[1] == 'beef chuck roast':
     pass
 
-'''
-class ChickenBreast(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'chicken breast'
-    self.aisle = 'meat'
-    
+'''  
 class BeefChuckRoast(Food):
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
