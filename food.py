@@ -1,7 +1,7 @@
 from mixed import Mixed
 #from decimal import Decimal
 
-#will amount be required?
+#continue editing all foods to meet correct ailse
 class Food():
   """Base class for all food in shopping list."""
   #aisle where food is located in store
@@ -432,106 +432,187 @@ class BlackBeans(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-'''
-class Celery(Food):
+
+class SalsaVerde(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
-    self.aisle = 'veggie'
+    self.food = 'salsa verde'
+    self.aisle = ''
     
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class Celery(Food):
+class TomatoSauce(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
+    self.food = 'tomato Sauce'
+    self.aisle = ''
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+    
+class ExtraWideEggNoodles(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'extra wide egg noodles'
     self.aisle = 'veggie'
     
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Celery(Food):
+class ItalianBreadCrumbs(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
-    self.aisle = 'veggie'
-    
-  def __str__(self):
-    return Super.__str__() + " " + self.food
-    
-class Celery(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
+    self.food = 'italian bread crumbs'
     self.aisle = 'veggie'
     
   def __str__(self):
     return Super.__str__() + " " + self.food
  
-class Celery(Food):
+class Orzo(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
-    self.aisle = 'veggie'
+    self.food = 'orzo'
+    self.aisle = 'pasta'
     
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Celery(Food):
+class Rigatoni(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
+    self.food = 'rigatoni'
     self.aisle = 'veggie'
     
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class Celery(Food):
+class PastaSauce(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
+    self.food = 'pasta sauce'
     self.aisle = 'veggie'
     
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Celery(Food):
+class FrozenCheeseTortellini(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
+    self.food = 'frozen cheese tortellini'
     self.aisle = 'veggie'
     
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Celery(Food):
+class Cornflakes(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
+    self.food = 'cornflakes'
     self.aisle = 'veggie'
     
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Celery(Food):
+class Egg(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
+    self.food = 'egg'
     self.aisle = 'veggie'
     
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Celery(Food):
+class Ritz(Food):
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
+    self.food = 'ritz'
     self.aisle = 'veggie'
     
   def __str__(self):
     return Super.__str__() + " " + self.food
-'''
+  
+class Jalapeno(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'jalapeno'
+    self.aisle = 'veggie'
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+  
+class ElbowMacoroni(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'elbow macoroni'
+    self.aisle = 'veggie'
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+  
+class PennePasta(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'penne pasta'
+    self.aisle = 'veggie'
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+  
+class ChiliPowder(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'chili powder'
+    self.aisle = 'veggie'
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+  
+class Salt(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'ritz'
+    self.aisle = 'veggie'
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+  
+class GroundCumin(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'ground cumin'
+    self.aisle = 'veggie'
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+  
+class GarlicPowder(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'garlic powder'
+    self.aisle = 'veggie'
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+  
+class LowSodiumChickenBroth(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'low-sodium chicken broth'
+    self.aisle = 'veggie'
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+  
+class CornTortilla(Food):
+  def __init__(self, amount=1, unitOfMeasure='stalk'):
+    Super().__init__(unitOfMeasure, amount)
+    self.food = 'corn tortilla'
+    self.aisle = 'veggie'
+    
+  def __str__(self):
+    return Super.__str__() + " " + self.food
+
 
 #spices and sauces, pasta
 #Non-food items
@@ -543,26 +624,6 @@ class FreezerBag(Food):
                
   def __str__(self):
     return Super.__str__() + " " + self.food
-
-#modify to meet aisle of store
-'''
-self.sloppy_joes = ['15 OZ. tomato Sauce']
-self.chicken_tikka_masala = ['15 OZ. tomato sauce','15 OZ. tomato sauce']
-self.chicken_cordon_bleu_casserole = ['extra wide egg noodles', 'italian bread crumbs']
-self.chicken_and_sausage_orzo =['8oz._tomatoe SAUCE', 'orzo']
-self.italian_sausage_rigatoni = ['4.5 cups rigatoni']
-self.tuscaan_torellini_soup = ['24oz pasta sauce', 'frozen cheese tortellini']
-self.white_chicken_chili = ['salsa verde']
-self.ranch_popcorn_chicken = ['egg', 'cornflakes',]
-self.cheesy_chicken_veggie_casserole = ['ritz', ]
-self.jalepeno_and_bacon = ['elbow macoroni' 'jalepeno']
-self.indian_butter_chicken = [' '15oz tomatoe sauce', '15oz tomatoe sauce']']
-self.chicken_tortilla_soup = ['1TB Chili Powder', '1/2 tsp salt', '1/2 tea GROUND CUMIN','1/2 tea GARLIC POWDER','4 CUPS LOW-SODIUM CHICKEN BROTH*','
-self.creamy_chicken_penne = ['penne pasta']
-self.salsa_verde_chicken = ['salsa verde',]
-self.ministrone_soup_w_ground_beef = ['', 'spinach CORN TORTILLAS*',]
-#self.chicken_tortilla_soup['1TB Chili Powder', '1/2 tsp salt', '1/2 tea GROUND CUMIN','1/2 tea GARLIC POWDER','4 CUPS LOW-SODIUM CHICKEN BROTH *NOT NEEDED UNTIL DAY OF COOKING','4 CORN TORTILLAS--SLICED *NOT NEEDED UNTIL DAY OF SERVIN
-'''
 
 #Dry and liquid Measure Equivalents: nested list in food or recipe
 '''
