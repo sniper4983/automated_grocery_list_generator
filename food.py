@@ -627,6 +627,8 @@ class FreezerBag(Food):
 
 #Dry and liquid Measure Equivalents: nested list in food or recipe
 '''
+Turn into dictionary
+
 Volume (Liquid) 
 American Standard      American Standard             Metric
  (Cups & Quarts )           (Ounces)           (Milliliters & Liters)
