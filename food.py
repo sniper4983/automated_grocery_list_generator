@@ -108,11 +108,13 @@ class Food():
   def __rtruediv__self, lhs):
     return lhs / self.amount
   
-  #vary for each food item. All Fractions should round up to total number of items needed. 10 oz, 12 oz would be 2 10 oz, etc?
+  '''
+  vary for each food item. All Fractions should round up to total number of items needed. 10 oz, 12 oz would be 2 10 oz, etc?
+  where and how'''
   def __mod__(self, rhs):
     pass
 
-#foods need to be modified, unit of measure or name
+#---foods need to be modified, unit of measure or name clean up all ailes so it matches main file and dictionary---
 #meats
 class ChickenBreast(Food):
   def __init__(self, amount=1, unitOfMeasure='Lb'):
