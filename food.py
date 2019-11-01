@@ -1,6 +1,11 @@
 from mixed import Mixed
 #from decimal import Decimal
 
+#add remaining classes
+aisleDict = {}
+aisleDict['chicken breast'] = 'meat'
+
+
 #continue editing all foods to meet correct ailse
 class Food():
   """Base class for all food in shopping list."""
