@@ -135,9 +135,20 @@ while new_item.upper() != "DONE":
     elif new_item.upper() != "DONE":
         print("Your item is invalid, try again. Type HELP to see all items.")
 
+'''
+Shorter need to find to add aisle
+for ingredient in shopping_list:
+     new_item = parse(ingredient)
+    if not(new_item[1] in groceries):
+        groceries[new_item[1]] = Food(new_item[0][0], new_item[0][1])
+        #how do I add aisle, aisle dictionary
+    elif new_item[1] == ”chicken breast“:
+ '''       
+
 #convert string to food classes
 for ingredient in shopping_list:
     ingredient_Tuple = parse(ingredient)
+   
     if ingredient_Tuple[1] == 'chicken breast':
         if firstTimeEntry('chicken breast'):
             groceries['chicken breast'] = ChickenBreast(ingredient_Tuple[0], ingredient_Tuple[1])
