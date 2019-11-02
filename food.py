@@ -1,6 +1,33 @@
 from mixed import Mixed
 #from decimal import Decimal
 
+#Dry and liquid Measure Equivalents: nested list in food or recipe
+'''
+Turn into dictionary
+
+Volume (Liquid) 
+American Standard      American Standard             Metric
+ (Cups & Quarts )           (Ounces)           (Milliliters & Liters)
+   2 tbsp                   1 fl. oz.               30 ml
+   1/4 cup                  2 fl. oz.               60 ml
+   1/2 cup                  4 fl. oz.               125 ml
+   1 cup                    8 fl. oz.               250 ml
+   1 1/2 cups               12 fl. oz.              375 ml
+   2 cups or 1 pint         16 fl. oz.              500 ml
+   4 cups or 1 quart        32 fl. oz.              1000 ml or 1 liter
+   1 gallon                 128 fl. oz.             4 liters
+ 
+Dry Measure Equivalents
+ 	 	 	 
+ 3 teaspoons	 1 tablespoon	 1/2 ounce	 14.3 grams
+ 2 tablespoons	1/8 cup	 1 ounce	 28.3 grams
+ 4 tablespoons	 1/4 cup	 2 ounces	 56.7 grams
+ 5 1/3 tablespoons	 1/3 cup	 2.6 ounces	 75.6 grams
+ 8 tablespoons	 1/2 cup	 4 ounces	 113.4 grams
+ 12 tablespoons	 3/4 cup	 6 ounces	 .375 pound
+ 32 tablespoons	 2 cups	 16 ounces	 1 pound
+'''
+
 ailes = {}
 ailes['beef chuck roast'] = 'meat'
 ailes['ground beef'] = 'meat'
@@ -66,8 +93,6 @@ ailes['cornflakes'] = 'cereal'
 ailes['ritz'] = 'crackers'
 
 
-
-#continue editing all foods to meet correct ailse
 class Food():
   """Base class for all food in shopping list."""
   #aisle where food is located in store
@@ -172,7 +197,7 @@ class PorkShoulder(Food):
     return Super.__str__() + " " + self.food
 
 class Bacon(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
+  def __init__(self, amount=1, unitOfMeasure='Lb'): #look up
     Super().__init__(amount, unitOfMeasure)
     self.food = 'bacon'
     self.aisle = ailes[self.food]
@@ -189,7 +214,7 @@ class GroundTurkey(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class HamSteak(Food):
+class HamSteak(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(amount, unitOfMeasure)
     self.food = 'bone in ham bone steak'
@@ -218,7 +243,7 @@ class SerloinTipRoast(Food):
 
   #Dairy
 
-class AmericanCheese(Food):
+class AmericanCheese(Food): #change to packages at ending for everything non lb.
   def __init__(self, amount=1, unitOfMeasure='slice'):
     Super().__init__(amount, unitOfMeasure)
     self.food = 'American cheese'
@@ -227,7 +252,7 @@ class AmericanCheese(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class HeavyCream(Food):
+class HeavyCream(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'heavy cream'
@@ -236,7 +261,7 @@ class HeavyCream(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class Milk(Food):
+class Milk(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'milk'
@@ -245,7 +270,7 @@ class Milk(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class HeavyWhippingCream(Food):
+class HeavyWhippingCream(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'heavy whipping cream'
@@ -254,7 +279,7 @@ class HeavyWhippingCream(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class ParmeseanCheese(Food):
+class ParmeseanCheese(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'parmesean cheese'
@@ -263,7 +288,7 @@ class ParmeseanCheese(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class Butter(Food):
+class Butter(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'butter'
@@ -272,7 +297,7 @@ class Butter(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class EvaporatedMilk(Food):
+class EvaporatedMilk(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'evaporated milk'
@@ -281,7 +306,7 @@ class EvaporatedMilk(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class CreamCheese(Food):
+class CreamCheese(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'cream cheese'
@@ -290,7 +315,7 @@ class CreamCheese(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class SourCream(Food):
+class SourCream(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'sour cream'
@@ -299,7 +324,7 @@ class SourCream(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class MontereyJackCheese(Food):
+class MontereyJackCheese(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'monterey jack cheese'
@@ -308,7 +333,7 @@ class MontereyJackCheese(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class CheddarCheese(Food):
+class CheddarCheese(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'cheddar cheese'
@@ -317,7 +342,7 @@ class CheddarCheese(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class ShreddedCheddar(Food): #same as above 
+class ShreddedCheddar(Food): #same as above? #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'shredded cheddar'
@@ -327,7 +352,7 @@ class ShreddedCheddar(Food): #same as above
     return Super.__str__() + " " + self.food
   
 #Veggies
-class Babycarrots(Food):
+class Babycarrots(Food): #look up mixup to bag
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'baby carrots'
@@ -346,16 +371,17 @@ class Carrots(Food):
     return Super.__str__() + " " + self.food
 
 
-class Onion(Food):
+class Onion(Food): #look up frozen onions
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'onion'
+    #what to become frozen onions
     self.aisle = ailes[self.food]
     
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class Spinach(Food):
+class Spinach(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'spinach'
@@ -364,7 +390,7 @@ class Spinach(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class FrozenBellPeppers(Food):
+class FrozenBellPeppers(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'frozen bell peppers'
@@ -373,7 +399,7 @@ class FrozenBellPeppers(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class GreenOnions(Food):
+class GreenOnions(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'green onions'
@@ -382,7 +408,7 @@ class GreenOnions(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class DicedTomatoes(Food):
+class DicedTomatoes(Food): #look up if works
   def __init__(self, amount=1, unitOfMeasure='14.5 oz'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'diced tomatoes'
@@ -409,7 +435,7 @@ class SmallCabbage(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class RedBellPepper(Food):
+class RedBellPepper(Food): #look up if blank
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'red bell pepper'
@@ -418,7 +444,7 @@ class RedBellPepper(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 #needed?
-class RainbowPeppers(Food):
+class RainbowPeppers(Food): #same as red peppers
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'rainbow peppers'
@@ -426,8 +452,8 @@ class RainbowPeppers(Food):
     
   def __str__(self):
     return Super.__str__() + " " + self.food
-  #fix below
-class ButternutSquash(Food):
+  
+class ButternutSquash(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'butternut squash'
@@ -445,7 +471,7 @@ class FrozenCorn(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class DarkRedKidneyBeans(Food):
+class DarkRedKidneyBeans(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'dark red kidney beans'
@@ -454,7 +480,7 @@ class DarkRedKidneyBeans(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class GreenBeans(Food):
+class GreenBeans(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'grean beans'
@@ -463,7 +489,7 @@ class GreenBeans(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class RedPotatoes(Food):
+class RedPotatoes(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'red potatoes'
@@ -472,7 +498,7 @@ class RedPotatoes(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class Celery(Food):
+class Celery(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'celery'
@@ -482,7 +508,7 @@ class Celery(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class CannelliniBeans(Food):
+class CannelliniBeans(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'cannellini beans('
@@ -491,7 +517,7 @@ class CannelliniBeans(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class BlackBeans(Food):
+class BlackBeans(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='Lb'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'black beans'
@@ -501,7 +527,7 @@ class BlackBeans(Food):
     return Super.__str__() + " " + self.food
     
 
-class SalsaVerde(Food):
+class SalsaVerde(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'salsa verde'
@@ -510,7 +536,7 @@ class SalsaVerde(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class TomatoSauce(Food):
+class TomatoSauce(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'tomato Sauce'
@@ -519,7 +545,7 @@ class TomatoSauce(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class ExtraWideEggNoodles(Food):
+class ExtraWideEggNoodles(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'extra wide egg noodles'
@@ -528,7 +554,7 @@ class ExtraWideEggNoodles(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class ItalianBreadCrumbs(Food):
+class ItalianBreadCrumbs(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'italian bread crumbs'
@@ -537,7 +563,7 @@ class ItalianBreadCrumbs(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
  
-class Orzo(Food):
+class Orzo(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'orzo'
@@ -546,7 +572,7 @@ class Orzo(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Rigatoni(Food):
+class Rigatoni(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'rigatoni'
@@ -555,7 +581,7 @@ class Rigatoni(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
 
-class PastaSauce(Food):
+class PastaSauce(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'pasta sauce'
@@ -564,7 +590,7 @@ class PastaSauce(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class FrozenCheeseTortellini(Food):
+class FrozenCheeseTortellini(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'frozen cheese tortellini'
@@ -573,7 +599,7 @@ class FrozenCheeseTortellini(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Cornflakes(Food):
+class Cornflakes(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'cornflakes'
@@ -582,7 +608,7 @@ class Cornflakes(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Egg(Food):
+class Egg(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'egg'
@@ -591,7 +617,7 @@ class Egg(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
     
-class Ritz(Food):
+class Ritz(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'ritz'
@@ -600,7 +626,7 @@ class Ritz(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class Jalapeno(Food):
+class Jalapeno(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'jalapeno'
@@ -609,7 +635,7 @@ class Jalapeno(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class ElbowMacoroni(Food):
+class ElbowMacoroni(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'elbow macoroni'
@@ -618,7 +644,7 @@ class ElbowMacoroni(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class PennePasta(Food):
+class PennePasta(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'penne pasta'
@@ -627,7 +653,7 @@ class PennePasta(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class ChiliPowder(Food):
+class ChiliPowder(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'chili powder'
@@ -636,7 +662,7 @@ class ChiliPowder(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class Salt(Food):
+class Salt(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'salt'
@@ -645,7 +671,7 @@ class Salt(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class GroundCumin(Food):
+class GroundCumin(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'ground cumin'
@@ -654,7 +680,7 @@ class GroundCumin(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class GarlicPowder(Food):
+class GarlicPowder(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'garlic powder'
@@ -663,7 +689,7 @@ class GarlicPowder(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class LowSodiumChickenBroth(Food):
+class LowSodiumChickenBroth(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'low-sodium chicken broth'
@@ -672,7 +698,7 @@ class LowSodiumChickenBroth(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
-class CornTortilla(Food):
+class CornTortilla(Food): #look up
   def __init__(self, amount=1, unitOfMeasure='stalk'):
     Super().__init__(unitOfMeasure, amount)
     self.food = 'corn tortilla'
@@ -682,7 +708,7 @@ class CornTortilla(Food):
     return Super.__str__() + " " + self.food
 
 #Non-food items
-class FreezerBag(Food):
+class FreezerBag(Food): 
   def __init__(self, amount=1):
     Super().__init__(amount)
     self.food = 'freezer bag'
@@ -690,32 +716,4 @@ class FreezerBag(Food):
                
   def __str__(self):
     return Super.__str__() + " " + self.food
-               
-
-#Dry and liquid Measure Equivalents: nested list in food or recipe
-'''
-Turn into dictionary
-
-Volume (Liquid) 
-American Standard      American Standard             Metric
- (Cups & Quarts )           (Ounces)           (Milliliters & Liters)
-   2 tbsp                   1 fl. oz.               30 ml
-   1/4 cup                  2 fl. oz.               60 ml
-   1/2 cup                  4 fl. oz.               125 ml
-   1 cup                    8 fl. oz.               250 ml
-   1 1/2 cups               12 fl. oz.              375 ml
-   2 cups or 1 pint         16 fl. oz.              500 ml
-   4 cups or 1 quart        32 fl. oz.              1000 ml or 1 liter
-   1 gallon                 128 fl. oz.             4 liters
- 
-
-Dry Measure Equivalents
- 	 	 	 
- 3 teaspoons	 1 tablespoon	 1/2 ounce	 14.3 grams
- 2 tablespoons	1/8 cup	 1 ounce	 28.3 grams
- 4 tablespoons	 1/4 cup	 2 ounces	 56.7 grams
- 5 1/3 tablespoons	 1/3 cup	 2.6 ounces	 75.6 grams
- 8 tablespoons	 1/2 cup	 4 ounces	 113.4 grams
- 12 tablespoons	 3/4 cup	 6 ounces	 .375 pound
- 32 tablespoons	 2 cups	 16 ounces	 1 pound
-'''
+  
