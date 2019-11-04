@@ -50,6 +50,7 @@ def processNumber(numList):
         den = numList[1]
         return Mixed(0, num, den)
 
+#will not work for '1 freezer bag'
 def parse(foodStr):
     fractionList = []
     name = ''
