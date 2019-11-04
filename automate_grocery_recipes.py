@@ -1,3 +1,4 @@
+import re
 from recipe import Recipe
 import Food
 
@@ -33,30 +34,48 @@ def cleanPrint(aList, Dict=False):
 def firstTimeEntry(food, dict):
     return not (food in dict)
 
-def parse(name, foodDict):
-    foodList = [None] * 2 
-    rhs = ''
-    inc = 1
-    lhs = name[inc]
+def processNumber(numList):
+    whole = 0
+    num = 0
+    den = 1
+    
+    if len(numList) > 1:
+        whole = int(numList[0])
+        numList = numList[1].split('/')
+        num = numList[0]
+        den = numList[1]
+        return Mixed(whole, num, den)
+    elif numList[0].find('/') == -1:
+        return int(numList[0])
+    else:
+        numList = numList[0].split('/')
+        num = numList[0]
+        den = numList[1]
+        return Mixed(0, num, den)
 
-    while lhs not in foodDict:
-        inc = inc + 1
-        lhs = name[:inc]
-        rhs = name[inc:]
+def parse(foodStr):
+    fractionList = []
+    name = ''
+    strList = re.split("\s", foodStr)
 
-    rhs = foodList[1]
+    while (strList[0].isdigit() or strList[0].find('/')):
+        fractionList.append(strList[0])
+        strList.pop(0)
+        if strList[0].isdigit() or strList[0].find('/') == -1:
+            break
+    number = processNumber(fractionList)
 
-    name = lhs
-    rhs = ''
-    inc = 0
-    lhs = name[inc]
-    while name[inc].isDigit() or name[0] == '/':
-        inc = inc + 1
-        lhs = name[:inc]
-        rhs = name[inc:]
-    foodList[0] = (lhs, rhs)
+    
+    mType = strList[0]
+    strList.pop(0)
 
-    return foodList
+    for i in range(len(strList)):
+        if i == len(strList) - 1:
+            name = name + strList[i]
+        else:
+            name = name + strList[i] + ' '
+
+    return (number, mType, name)
 
 recipes = Recipe()
 border = "="*11
