@@ -1,5 +1,3 @@
-from mixed import Mixed
-#from decimal import Decimal
 
 #Dry and liquid Measure Equivalents: nested list in food or recipe
 '''
