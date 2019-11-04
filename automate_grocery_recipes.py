@@ -31,9 +31,6 @@ def cleanPrint(aList, Dict=False):
                 
     return counterDict
 
-def firstTimeEntry(food, dict):
-    return not (food in dict)
-
 def processNumber(numList):
     whole = 0
     num = 0
@@ -165,407 +162,330 @@ for ingredient in shopping_list:
  '''       
 
 #convert string to food classes
+#assign aisle here
 for ingredient in shopping_list:
+    #(amount, measure, name)
     ingredient_Tuple = parse(ingredient)
    
-    if ingredient_Tuple[1] == 'chicken breast':
-        if firstTimeEntry('chicken breast'):
-            groceries['chicken breast'] = ChickenBreast(ingredient_Tuple[0], ingredient_Tuple[1])
+    if ingredient_Tuple[2] == 'chicken breast':
+        if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ChickenBreast(ingredient_Tuple[0], ingredient_Tuple[1])
         else:
-            groceries['chicken breast'] =  groceries['chicken breast'] + ChickenBreast(ingredient_Tuple[0], ingredient_Tuple[1])
-   elif ingredient_Tuple[1] == 'beef chuck roast':
-    pass
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ChickenBreast(ingredient_Tuple[0], ingredient_Tuple[1])
+   elif ingredient_Tuple[2] == 'beef chuck roast':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = BeefChuckRoast(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + BeefChuckRoast(ingredient_Tuple[0], ingredient_Tuple[1])
+  elif ingredient_Tuple[2] == 'ground beef':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = GroundBeef(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + GroundBeef(ingredient_Tuple[0], ingredient_Tuple[1])
+  elif ingredient_Tuple[2] == 'ground italian sausage':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = GroundItalianSausage(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + GroundItalianSausage(ingredient_Tuple[0], ingredient_Tuple[1])
+  elif ingredient_Tuple[2] == 'italian sausage':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ItalianSausage(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ItalianSausage(ingredient_Tuple[0], ingredient_Tuple[1])
+  elif ingredient_Tuple[2] == 'pork shoulder':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = PorkShoulder(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + PorkShoulder(ingredient_Tuple[0], ingredient_Tuple[1])
+  elif ingredient_Tuple[2] == 'bacon':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Bacon(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Bacon(ingredient_Tuple[0], ingredient_Tuple[1])
+  elif ingredient_Tuple[2] == 'ground turkey':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = GroundTurkey(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + GroundTurkey(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'bone in ham bone steak':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = HamSteak(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + HamSteak(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'chicken thighs':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ChickenThighs(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ChickenThighs(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'sliced & fat trimmed boneless sirloin tip roast':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = SerloinTipRoast(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + SerloinTipRoast(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'american cheese':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = AmericanCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + AmericanCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'heavy cream':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = HeavyCream(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + HeavyCream(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'milk':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Milk(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Milk(ingredient_Tuple[0], ingredient_Tuple[1])
+elif ingredient_Tuple[2] == 'heavy whipping cream':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = HeavyWhippingCream(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + HeavyWhippingCream(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'parmsean cheese':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ParmseanCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ParmseanCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'butter':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Butter(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Butter(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'evaporated milk':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = EvaporatedMik(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + EvaporatedMilk(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'cream cheese':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = CreamCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + CreamCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'sour cream':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = (ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + (ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'monterey jack cheese':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = MontereyJackChhese(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + MonterEyJackChhese(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'cheddar cheese':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = CheedarCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + CheedarCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'shredded cheddar cheese':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ShreddedCheddarCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ShreddedCheddarCheese(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'baby carrots':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = BabyCarrots(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + BabyCarrots(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'carrot': #fix for plural
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Carrots(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Carrots(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'onion':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Onion(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Onion(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'spinach':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Spinach(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Spinach(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'frozen bell peppers':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = FrozenBellPeppers(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + FrozenBellPeppers(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'green onions':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = GreenOnions(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + GreenOnions(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'diced tomatoes':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = DicedTomatoes(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + (ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'zucchini':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Zucchini(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Zucchini(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'small cabbage':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = SmallCabbage(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + SmallCabbage(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'red bell pepper':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = RedBellPepper(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + RedBellPepper(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'rainbow peppers':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = RainbowPeppers(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + RainbowPeppers(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'butternut squash':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ButternutSquash(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ButternutSquash(ingredient_Tuple[0], ingredient_Tuple[1])
+elif ingredient_Tuple[2] == 'celery':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Celery(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Celery(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'dark red kidney beans':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = DarkRedKidneyBeans(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + DarkRedKidneyBeans(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'frozen corn':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = FrozenCorn(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + FrozenCorn(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'green beans':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = GreenBeans(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + GreenBeans(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'red potatoes':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = RedPotatoes(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + RedPotatoes(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'cannellini beans':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = CannelliniBeansingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + CannelliniBeans(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'black beans':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = (ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + BlackBeans(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'salsa verde':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = SalsaVerde(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + SalsaVerde(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'tomato sauce':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = TomatoSauce(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + TomatoSauce(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'extra wide egg noddles':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ExtraWideEggNoodles(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ExtraWideEggNoodles(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'rigatoni':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Rigatoni(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Rigatoni(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'orzo':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Orzo(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Orzo(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'italian bread crumbs':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ItalianBreadCrumbs(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ItalianBreadCrumbs(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'pasta sauce':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = PastaSauce(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + PastaSauce(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'frozen cheese tortellini':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = FrozenCheeseTortellini(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + FrozenCheeseTortellini(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'cornflakes':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Cornflakes(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Cornflakes(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'egg':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Egg(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Egg(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'ritz':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Ritz(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Ritz(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'jalapeno':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Jalapeno(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Jalapeno(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'elbow macaroni':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ElbowMacaroni(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ElbowMacaroni(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'penne pasta':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = PennePasta(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + PennePasta(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'salt':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = Salt(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + Salt(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'ground cumin':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = GroundCumin(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + GroundCumin(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'chili powder':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = ChiliPowder(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + ChiliPowder(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'low-sodium chicken broth':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = LowSodiumChickenBroth(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + LowSodiumChickenBroth(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'garlic powder':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = GarlicPowder(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + GarlicPowder(ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'corn tortilla':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = (ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + (ingredient_Tuple[0], ingredient_Tuple[1])
+ elif ingredient_Tuple[2] == 'freezer bag':
+    if not (food in groceries)
+            groceries[ingredient_Tuple[2]] = FreezerBag(ingredient_Tuple[0], ingredient_Tuple[1])
+        else:
+            groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + FreezerBag
 
-'''  
-class BeefChuckRoast(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'beef chuck roast'
-    self.aisle = 'meat'
- 
-class GroundBeef(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'ground beef'
-    self.aisle = 'meat'
- 
-class GroundItalianSausage(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'ground italian sausage'
-    self.aisle = 'meat'
- 
-class ItalianSausage(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'italian sausage'
-    self.aisle = 'meat'
- 
-class PorkShoulder(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'pork shoulder'
-    self.aisle = 'meat'
- 
-class Bacon(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'bacon'
-    self.aisle = 'meat'
- 
-class GroundTurkey(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'ground turkey'
-    self.aisle = 'meat'
-
-class HamSteak(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'bone in ham bone steak'
-    self.aisle = 'meat'
-  
-class ChickenThighs(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'chicken thighs'
-    self.aisle = 'meat'
-  
-class SerloinTipRoast(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'sliced & fat trimmed boneless sirloin tip roast'
-    self.aisle = 'meat'
- 
-  #Dairy
-
-class AmericanCheese(Food):
-  def __init__(self, amount=1, unitOfMeasure='slice'):
-    Super().__init__(amount, unitOfMeasure)
-    self.food = 'American cheese'
-    self.aisle = 'dairy'
-  
-class HeavyCream(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'heavy cream'
-    self.aisle = 'dairy'
-   
-class Milk(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'milk'
-    self.aisle = 'dairy'
- 
-class HeavyWhippingCream(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'heavy whipping cream'
-    self.aisle = 'dairy'
-
-class ParmeseanCheese(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'parmesean cheese'
-    self.aisle = 'dairy'
-
-class Butter(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'butter'
-    self.aisle = 'dairy'
-  
-class EvaporatedMilk(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'evaporated milk'
-    self.aisle = 'dairy'
-  
-class CreamCheese(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'cream cheese'
-    self.aisle = 'dairy'
- 
-class SourCream(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'sour cream'
-    self.aisle = 'dairy'
- 
-class MontereyJackCheese(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'monterey jack cheese'
-    self.aisle = 'dairy'
- 
-class CheddarCheese(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'cheddar cheese'
-    self.aisle = 'dairy'
- 
-class ShreddedCheddar(Food): #same as above 
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'shredded cheddar'
-    self.aisle = 'dairy'
- 
-#Veggies
-class baby carrots(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'baby carrots'
-    self.aisle = 'veggie'
-
-class Carrots(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'carrots'
-    self.aisle = 'veggie'
-
-class Onion(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'onion'
-    self.aisle = 'veggie'
- 
-class Spinach(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'spinach'
-    self.aisle = 'veggie'
- 
-class FrozenBellPeppers(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'frozen bell peppers'
-    self.aisle = 'veggie'
-  
-class GreenOnions(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'green onions'
-    self.aisle = 'veggie'
-    
-class DicedTomatoes(Food):
-  def __init__(self, amount=1, unitOfMeasure='14.5 oz'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'diced tomatoes'
-    self.aisle = 'veggie' #can
- 
-class Zucchini(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'zucchini'
-    self.aisle = 'veggie'
-    
-class SmallCabbage(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'small cabbage'
-    self.aisle = 'veggie'
-  
-class RedBellPepper(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'red bell pepper'
-    self.aisle = 'veggie'
-  
-class RainbowPeppers(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'rainbow peppers'
-    self.aisle = 'veggie'
-  
-  class ButternutSquash(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'butternut squash'
-    self.aisle = 'veggie'
-   
-class FrozenCorn(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'frozen corn'
-    self.aisle = 'veggie'
- 
- class DarkRedKidneyBeans(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'dark red kidney beans'
-    self.aisle = 'veggie'
-
-class GreenBeans(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'grean beans'
-    self.aisle = 'veggie'
-  
-class RedPotatoes(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'red potatoes'
-    self.aisle = 'veggie'
- 
- class Celery(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'celery'
-    self.aisle = 'veggie'
-    #play with this one stalks change to bunches or pounds
- 
-class CannelliniBeans(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'cannellini beans('
-    self.aisle = 'veggie'
-
-class BlackBeans(Food):
-  def __init__(self, amount=1, unitOfMeasure='Lb'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'black beans'
-    self.aisle = 'veggie'
-
-class SalsaVerde(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'salsa verde'
-    self.aisle = ''
-
-class TomatoSauce(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'tomato Sauce'
-    self.aisle = ''
-    
-  def __str__(self):
-    return Super.__str__() + " " + self.food
-    
-class ExtraWideEggNoodles(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'extra wide egg noodles'
-    self.aisle = 'veggie'
-
-class ItalianBreadCrumbs(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'italian bread crumbs'
-    self.aisle = 'veggie'
-
-class Orzo(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'orzo'
-    self.aisle = 'pasta'
- 
-class Rigatoni(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'rigatoni'
-    self.aisle = 'veggie'
-
-class PastaSauce(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'pasta sauce'
-    self.aisle = 'veggie'
-  
-class FrozenCheeseTortellini(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'frozen cheese tortellini'
-    self.aisle = 'veggie'
-    
-class Cornflakes(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'cornflakes'
-    self.aisle = 'veggie'
-    
-class Egg(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'egg'
-    self.aisle = 'veggie'
-    
-class Ritz(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'ritz'
-    self.aisle = 'veggie'
-  
-class Jalapeno(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'jalapeno'
-    self.aisle = 'veggie'
-  
-class ElbowMacoroni(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'elbow macoroni'
-    self.aisle = 'veggie'
-    
-  def __str__(self):
-    return Super.__str__() + " " + self.food
-  
-class PennePasta(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'penne pasta'
-    self.aisle = 'veggie'
-  
-class ChiliPowder(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'chili powder'
-    self.aisle = 'veggie'
-  
-class Salt(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'ritz'
-    self.aisle = 'veggie'
-  
-class GroundCumin(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'ground cumin'
-    self.aisle = 'veggie'
-
-  
-class GarlicPowder(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'garlic powder'
-    self.aisle = 'veggie'
-  
-class LowSodiumChickenBroth(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'low-sodium chicken broth'
-    self.aisle = 'veggie'
-    
-  
-class CornTortilla(Food):
-  def __init__(self, amount=1, unitOfMeasure='stalk'):
-    Super().__init__(unitOfMeasure, amount)
-    self.food = 'corn tortilla'
-    self.aisle = 'veggie'
-
-
-#Non-food items
-class FreezerBag(Food):
-'''
-
-'''use dictionary here foodlist
-   d[parse[1]] = class(parse[0][0],
-Parse[0][1]). Add if included'''
-    #add tons of if statements
 for food in d.keys():
-    pass#d[food].aisle
+    pass
+#d[food].aisle
  # == aisle up above enter in list?
 #complete list of obj ingredients store list
 #Sort this list based on aisle        
