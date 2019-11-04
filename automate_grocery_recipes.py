@@ -163,7 +163,7 @@ for ingredient in shopping_list:
  '''       
 
 #convert string to food classes
-#assign aisle here
+#assign aisle here, if user selects aisles to print list in
 for ingredient in shopping_list:
     #(amount, measure, name)
     ingredient_Tuple = parse(ingredient)
@@ -484,27 +484,15 @@ elif ingredient_Tuple[2] == 'celery':
         else:
             groceries[ingredient_Tuple[2]] =  groceries[ingredient_Tuple[2]] + FreezerBag
 
-for food in d.keys():
+for food in grocreies.keys():
     pass
-#d[food].aisle
+#groceries[food].aisle sort this into a nested list based on aisles
  # == aisle up above enter in list?
-#complete list of obj ingredients store list
-#Sort this list based on aisle        
-#for item in shopping_list:
-#    print(item)
 
-#counter = cleanPrint(shopping_list, True)
-#print("\nAlso Stock your Pantry with these items:\n")
-#cleanPrint(recipes.always_keep_stocked)
+#Sort this list based on aisle        
 
 #Count all of the ingredients after adding them up.
 '''
-total = 0
-for recipe in counter.keys():
-    total = total + counter[recipe]
-    print( recipe + " " + str(counter[recipe]))
-print('* items are not needed until day of cooking.')
-
-print("There are " + str(total) + " ingredients to buy. Not including pantry items.")
-#print("There are " + str(len(counter.keys())) + " ingredients to buy. Not including pantry items.")
-'''
+for item in store_list:
+    #add another for loop
+    print(item)
