@@ -82,9 +82,9 @@ ailes['butter'] = 'dairy'
 ailes['jalepeno'] = 'produce'
 ailes['elbow macoroni'] = 'italian'
 ailes['evaporated milk'] = 'baking'
-ailes['cannellini_beans'] = 'canned'
+ailes['cannellini beans'] = 'canned'
 ailes['green beans'] = 'canned' #fresh?
-ailes['pasta_sauce'] = 'pasta'
+ailes['pasta sauce'] = 'pasta'
 ailes['sour cream'] = 'dairy'
 ailes['frozen cheese tortellini'] = 'frozen'
 ailes['cornflakes'] = 'cereal'
@@ -136,7 +136,7 @@ class Food():
   where and how'''
   def __mod__(self, rhs):
     pass
-
+'''
 #---foods need to be modified, unit of measure or name clean up all ailes so it matches main file and dictionary---
 #meats
 class ChickenBreast(Food):
@@ -715,3 +715,4 @@ class FreezerBag(Food):
   def __str__(self):
     return Super.__str__() + " " + self.food
   
+'''
