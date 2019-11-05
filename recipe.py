@@ -1,5 +1,5 @@
 import Food
-
+#copy recipes word for word
 #create a dictionary of strings to classes
 food = {}
 food['chicken breast'] = ChickenBreast()
@@ -37,38 +37,30 @@ class Recipe():
 
         #1) recipes form new leaf wellness(excluding keep stocked list changed into a list on python
        
-        self.meats = ['beef chuck shouulder','ground turkey', 'ham', 'sliced & fat trimmed boneless sirloin tip roast',]
-        self.vegtables =['green bell peppers', 'frozen bell peppers', ]
-        self.suggested_sides = ['potatoes','rice','broccoli', 'brussel sprouts',]
-
-       
-        self.chili_spiced_beef_and_carrots = ["1 Lb beef chuck roast", "1 Lb beef chuck roast", '1 lb baby carrots', '1 lb baby carrots','freezer bag',]
-        self.monster_cheese_burgers = ['American cheese']
-        self.tuscan_steak_and_green_peppers = ['1 Lb sliced & fat trimmed boneless sirloin tip roast', 'frozen bell peppers','onion', '14.5 oz DICED tomatoes', 'freezer bag',]
-        self.beef_and_cabbage_soup = ['small cabage', 'onion', 'carrots', '14.5 oz DICED tomatoes', 'freezer bag',]
-        self.sloppy_joes = ['onion','red bell pepper', '15 OZ. tomato Sauce', 'freezer bag',]
-        self.chicken_spinach_alfredo = ['heavy cream', 'heavy cream', 'parmesean cheese',  'spinach', 'freezer bag',]
-        self.chicken_tikka_masala = ['15 OZ. tomato sauce','15 OZ. tomato sauce','heavy cream', 'freezer bag',]
-        self.shredded_chicken_fajitas = ['red bell pepper', 'freezer bag',]
-        self.chicken_cordon_bleu_casserole = ['extra wide egg noodles','bone in ham bone steak', 'swiss cheese', 'sour cream', 'italian bread crumbs', 'freezer bag',]
-        self.chicken_and_sausage_orzo = ['italian_sausage', '8oz._tomatoe SAUCE', 'orzo','freezer bag',]
-        self.italian_sausage_rigatoni = ['ground italian sausage' , '14.5 oz DICED tomatoes','14.5 oz DICED tomatoes', 'onion', '4.5 cups rigatoni', 'freezer bag']
-        self.gvb_soup_turkey = ['ground turkey','carrots', 'zucchini',]
-        self.tuscaan_torellini_soup = ['24oz pasta sauce', 'cannellini beans', 'carrot', 'onion', 'green beans', 'frozen cheese tortellini', 'freezer bag',]
-        self.white_chicken_chili = ['onion', 'salsa verde', 'cannellini beans', 'cannellini beans', 'freezer_bag',]
-        self.ranch_popcorn_chicken = ['egg', 'cornflakes',]
-        self.cheesy_chicken_veggie_casserole = ['green onions', 'milk', 'shredded cheddar', 'ritz', 'freezer bag',]
-        self.pulled_pork = ['1 Lb pork shoulder','1 Lb pork shoulder' 'onion', 'freezer bag',]
-        self.suasage_and_peppers =['1 Lb italian sausage', 'rainbow peppers','rainbow peppers', 'rainbow peppers', 'onion', 'freezer bag',]
-        self.potatoe_corn_chowder = ['red potatoes', 'red potatoes', 'red potatoes', 'celery','evaporated milk', 'freezer bag',]
-        self.jalepeno_and_bacon = ['elbow macoroni', 'monterey jack cheese,', 'cheddar cheese', 'jalepeno', 'onions', 'bacon', 'freezer bag',]
-        self.indian_butter_chicken = ['1 Lb chicken thighs', '1 Lb chicken thighs', 'butter,' '15oz tomatoe sauce', '15oz tomatoe sauce', 'heavy whipping cream', 'heavy whipping cream', 'freezer bag',]
-        self.creamy_chicken_penne = ['1 Lb chicken breast', '1 Lb chicken breast', 'parmesan cheese', '14.5 oz DICED tomatoes', 'heavy cream', 'heavy cream', 'penne pasta', 'freezer bag',]
-        self.salsa_verde_chicken = [ '1 Lb chicken breast', 'black beans', 'frozen corn', 'cream cheese', 'salsa verde',]
-        self.ministrone_soup_w_ground_beef = [ 'dark red kidney beans', 'spinach', 'butternut squash', 'zucchini', 'onion', 'freezer bag',]
-        self.chicken_tortilla_soup = ['onion', 'red bell pepper', '14.5 oz DICED tomatoes', '1.5 cups frozen corn', 'black beans', '1TB Chili Powder', '1/2 tsp salt', '1/2 tea GROUND CUMIN','1/2 tea GARLIC POWDER','4 CUPS LOW-SODIUM CHICKEN BROTH*','4 CORN TORTILLAS*',]
-        #self.chicken_tortilla_soup = ['1 Lb chicken breast', 'onion', 'red bell pepper', '14.5 oz DICED tomatoes', '1.5 cups frozen corn', 'black beans', '1TB Chili Powder', '1/2 tsp salt', '1/2 tea GROUND CUMIN','1/2 tea GARLIC POWDER','4 CUPS LOW-SODIUM CHICKEN BROTH *NOT NEEDED UNTIL DAY OF COOKING','4 CORN TORTILLAS--SLICED *NOT NEEDED UNTIL DAY OF SERVING',]
-                        ]
+        self.chili_spiced_beef_and_carrots = ["1 lb beef chuck roast", "1 lb beef chuck roast", '1 lb baby carrots', '1 lb baby carrots','1 gallon freezer bag',]
+        self.monster_cheese_burgers = ['1 lb ground beef', 'american cheese']
+        self.tuscan_steak_and_green_peppers = ['1 lb sliced & fat trimmed boneless sirloin tip roast', '1 frozen bell peppers','1 onion', '1 14.5oz DICED tomatoes', '1 gallon freezer bag',]
+        self.beef_and_cabbage_soup = ['1  small cabage', '1 onion', 'x carrots', '1 14.5oz diced tomatoes', '1 gallon freezer bag',]
+        self.sloppy_joes = ['1 onion','1 red bell pepper', '1 15oz tomato sauce', '1 gallon freezer bag',]
+        self.chicken_spinach_alfredo = ['1 heavy cream', '1 heavy cream', '1 parmesean cheese',  '1 spinach', '1 gallon freezer bag',]
+        self.chicken_tikka_masala = ['1 15oz tomato sauce','1 15oz tomato sauce','1 heavy cream', '1 gallon freezer bag',]
+        self.shredded_chicken_fajitas = ['1 red bell pepper', '1 gallon freezer bag',]
+        self.chicken_cordon_bleu_casserole = ['1 extra wide egg noodles','1 bone in ham bone steak', '1 swiss cheese', '1 sour cream', '1 italian bread crumbs', '1 gallon freezer bag',]
+        self.chicken_and_sausage_orzo = ['1 italian_sausage', '1 8oz tomato sauce', '1 orzo','1 gallon freezer bag',]
+        self.italian_sausage_rigatoni = ['1 ground italian sausage' , '1 14.5oz diced tomatoes','1 14.5oz diced tomatoes', '1 onion', '4.5 cups rigatoni', '1 gallon freezer bag']
+        self.gvb_soup_turkey = ['1 ground turkey','1 carrots', '1 zucchini',]
+        self.tuscaan_torellini_soup = ['1 24oz pasta sauce', '1 cannellini beans', '1 carrot', '1 onion', '1 green beans', '1 frozen cheese tortellini', '1 gallon freezer bag']
+        self.ranch_popcorn_chicken = ['1 egg', '1 cornflakes',]
+        self.cheesy_chicken_veggie_casserole = ['1 green onions', '1 milk', '1 shredded cheddar', '1 ritz', '1 gallon freezer bag',]
+        self.pulled_pork = ['1 lb pork shoulder','1 lb pork shoulder' '1 onion', '1 gallon freezer bag',]
+        self.suasage_and_peppers =['1 lb italian sausage', '1 rainbow peppers','1 rainbow peppers', '1 rainbow peppers', '1 onion', '1 gallon freezer bag',]
+        self.potatoe_corn_chowder = ['1 red potatoes', '1 red potatoes', '1 red potatoes', '1 celery','1 evaporated milk', '1 gallon freezer bag',]
+        self.jalepeno_and_bacon = ['1 elbow macoroni', '1 monterey jack cheese,', '1 cheddar cheese', '1 jalepeno', '1 onions', '1 bacon', '1 gallon freezer bag',]
+        self.indian_butter_chicken = ['1 lb chicken thighs', '1 lb chicken thighs', '1 butter,' '1 15oz tomato sauce', '1 15oz tomato sauce', '1 heavy whipping cream', '1 heavy whipping cream', '1 gallon freezer bag',]
+        self.creamy_chicken_penne = ['1 lb chicken breast', '1 lb chicken breast', '1 parmesan cheese', '1 14.5oz DICED tomatoes', '1 heavy cream', '1 heavy cream', '1 penne pasta', '1 gallon freezer bag',]
+        self.salsa_verde_chicken = [ '1 lb chicken breast', '1 black beans', '1 frozen corn', '1 cream cheese', '1 salsa verde',]
+        self.ministrone_soup_w_ground_beef = [ '1 dark red kidney beans', '1 spinach', '1 butternut squash', '1 zucchini', '1 onion', '1 gallon freezer bag',]
+        self.chicken_tortilla_soup = ['1 onion', '1 red bell pepper', '1 14.5oz diced tomatoes', '1.5 cups frozen corn', '1 black beans', '1 tablespoon chili powder', '1/2 teaspoon salt', '1/2 teaspoon ground cumin','1/2 teaspoon garlic powder','4 cups low-sodium chicken broth*','4 corn tortillas*',]
 
     def __str__(self):
         rep = 'Options are: meats,\nvegtables, suggested_sides, \nchili_spiced_beef_and_carrots, \nmonster cheese burgers, \ntuscan steak and green peppers, \nbeef and cabbage soup, \nsloppy joes, chicken spinach alfredo'
