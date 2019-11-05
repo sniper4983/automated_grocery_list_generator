@@ -95,11 +95,10 @@ class Food():
   """Base class for all food in shopping list."""
   #aisle where food is located in store
   
-  def __init__(self, amount=0, name='', aisle =''):
-    self.aisle = aisle
-    self.amount = Mixed(amount)
+  def __init__(self, amount=0, measure='', name=''):
+    self.ailes = ailes[name]
+    self.amount = amount
     self.name = name;
-    #ie 14.5 oz. can  
    
   def __str__(self):
     if not name:
