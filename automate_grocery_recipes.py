@@ -51,12 +51,16 @@ def processNumber(numList):
         den = numList[1]
         return Mixed(0, num, den)
 
-#will not work for '1 freezer bag'
+#will not work for 'red bell pepper'
 def parse(foodStr):
+    acceptMeasure []
+    #checkre '/doz' as well as list
     fractionList = []
     name = ''
+    num = None
     strList = re.split("\s", foodStr)
-
+#[1,red,bell,pepper]
+#dont make red measurement
     while (strList[0].isdigit() or strList[0].find('/')):
         fractionList.append(strList[0])
         strList.pop(0)
@@ -176,13 +180,15 @@ for ingredient in shopping_list:
     ingredient_Tuple = parse(ingredient)
     updateShoppingList(ingredient_tuple, groceries)
     #one list seperated by keys value is itsfood class
-   
-for food in grocreies.values():
-    if food.aisle
-#groceries[food].aisle sort this into a nested list based on aisles
- # == aisle up above enter in list?
-
-#Sort this list based on aisle        
+ 
+#sort list by aisle  
+for row in Food.aisles:
+    print(row)
+    for food in groceries.values():#if food.aisle
+        if food.aisle == row:
+            print(food)
+        
+#create seperate file?
 
 #Count all of the ingredients after adding them up.
 '''
