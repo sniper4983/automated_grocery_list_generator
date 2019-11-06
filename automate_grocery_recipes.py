@@ -94,7 +94,7 @@ grocerys = {}
 shopping_list = []
 food_list = []
 store_list = []
-
+with open('shopping list.txt', 'w') as f
 #these are the store aisles that will be used to eventually sort grocery list
 #or ask user to define aisles
 aisles = [['produce'],['meat', 'cheese', 'lunch meat',], ['dairy', 'eggs', 'juice', 'pies', 'yogurt', 'butter'],
@@ -183,15 +183,15 @@ for ingredient in shopping_list:
  
 #sort list by aisle  
 for row in Food.aisles:
-    print(row)
+    f.write(row)
+    #print(row)
     for food in groceries.values():#if food.aisle
         if food.aisle == row:
-            print(food)
-        
-#create seperate file?
-
+            f.write(food)
+            #print(food)
+print('open shopping list.txt for list.')
 #Count all of the ingredients after adding them up.
 '''
-for item in store_list:
+#for item in store_list:
     #add another for loop
-    print(item)
+    #print(item)
