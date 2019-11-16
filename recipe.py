@@ -1,10 +1,5 @@
 import Food
 #copy recipes word for word
-#create a dictionary of strings to classes
-food = {}
-food['chicken breast'] = ChickenBreast()
-food['ground beef'] = GroundBeef()
-food['pork shoulder'] = PorkShoulder()
 class Recipe():
     '''Lists of recipes for automate grocery recipes contained in here'''
     def __init__(self):
@@ -36,7 +31,7 @@ class Recipe():
 
 
         #1) recipes form new leaf wellness(excluding keep stocked list changed into a list on python
-       
+       #test and see if each recipe can be condenced
         self.chili_spiced_beef_and_carrots = ["1 lb beef chuck roast", "1 lb beef chuck roast", '1 lb baby carrots', '1 lb baby carrots','1 gallon freezer bag',]
         self.monster_cheese_burgers = ['1 lb ground beef', 'american cheese']
         self.tuscan_steak_and_green_peppers = ['1 lb sliced & fat trimmed boneless sirloin tip roast', '1 frozen bell peppers','1 onion', '1 14.5oz DICED tomatoes', '1 gallon freezer bag',]
@@ -54,7 +49,7 @@ class Recipe():
         self.cheesy_chicken_veggie_casserole = ['1 green onions', '1 milk', '1 shredded cheddar', '1 ritz', '1 gallon freezer bag',]
         self.pulled_pork = ['1 lb pork shoulder','1 lb pork shoulder' '1 onion', '1 gallon freezer bag',]
         self.suasage_and_peppers =['1 lb italian sausage', '1 rainbow peppers','1 rainbow peppers', '1 rainbow peppers', '1 onion', '1 gallon freezer bag',]
-        self.potatoe_corn_chowder = ['1 red potatoes', '1 red potatoes', '1 red potatoes', '1 celery','1 evaporated milk', '1 gallon freezer bag',]
+        self.potato_corn_chowder = ['1 red potatoes', '1 red potatoes', '1 red potatoes', '1 celery','1 evaporated milk', '1 gallon freezer bag',]
         self.jalepeno_and_bacon = ['1 elbow macoroni', '1 monterey jack cheese,', '1 cheddar cheese', '1 jalepeno', '1 onions', '1 bacon', '1 gallon freezer bag',]
         self.indian_butter_chicken = ['1 lb chicken thighs', '1 lb chicken thighs', '1 butter,' '1 15oz tomato sauce', '1 15oz tomato sauce', '1 heavy whipping cream', '1 heavy whipping cream', '1 gallon freezer bag',]
         self.creamy_chicken_penne = ['1 lb chicken breast', '1 lb chicken breast', '1 parmesan cheese', '1 14.5oz DICED tomatoes', '1 heavy cream', '1 heavy cream', '1 penne pasta', '1 gallon freezer bag',]
@@ -65,8 +60,8 @@ class Recipe():
     def __str__(self):
         rep = 'Options are: meats,\nvegtables, suggested_sides, \nchili_spiced_beef_and_carrots, \nmonster cheese burgers, \ntuscan steak and green peppers, \nbeef and cabbage soup, \nsloppy joes, chicken spinach alfredo'
         rep += ', \nchicken tikka masala, \nshredded chicken fajitas, \nchicken cordon bleu casserole, \nchicken and sausage orzo, \nitalian sausage rigatoni, \ngvb soup turkey, \ntuscaan torellini soup, \nwhite chicken chili'
-        rep += ', \nranch popcorn chicken, \ncheesy chicken veggie casserole, \npulled pork, \nsuasage and peppers, \npotatoe corn chowder, \njalepeno and bacon, \nindian butter chicken, \ncreamy chicken penne, \nsalsa verde chicken'
-        rep += ', \nministrone soup w ground_beef\nchicken tortilla soup'
+        rep += ', \nranch popcorn chicken, \ncheesy chicken veggie casserole, \npulled pork, \nsuasage and peppers, \npotato corn chowder, \njalepeno and bacon, \nindian butter chicken, \ncreamy chicken penne, \nsalsa verde chicken'
+        rep += ', \nministrone soup w ground beef\nchicken tortilla soup'
         return rep
 
     
