@@ -148,8 +148,8 @@ while new_item.upper() != "DONE":
         shopping_list.extend(recipes.pulled_pork)
     elif new_item == 'suasage and peppers':
         shopping_list.extend(recipes.suasage_and_peppers)
-    elif new_item == 'potatoe corn chowder':
-        shopping_list.extend(recipes.potatoe_corn_chowder)
+    elif new_item == 'potato corn chowder':
+        shopping_list.extend(recipes.potato_corn_chowder)
     elif new_item == 'jalepeno and bacon':
         shopping_list.extend(recipes.jalepeno_and_bacon)
     elif new_item == 'indian butter chicken':
