@@ -1,76 +1,34 @@
 import re
 from recipe import Recipe
 import Food
-#import fractions
-
-def cleanPrint(aList, Dict=False):
-    """Prints inside of a list or dictionary. List is the Default print."""
-    count = len(aList)
-    counterDict = {}
-    
-    if Dict:    
-        for item in aList:
-            if item not in counterDict.keys():
-                counterDict[item] = 1
-            else:
-                counterDict[item] = counterDict[item] + 1
-
-        count = len(counterDict)
-        for key, value in counterDict.items():
-            if count == 1:
-                print(key + ": " + str(value))
-            else:
-                print(key + ": " + str(value) + ",")
-                count = count - 1
-    else:
-        for item in aList:
-            if count == 1:
-                print(item)
-            else:
-                print(item + ",")
-                count = count - 1
-                
-    return counterDict
-
-def processNumber(numList):
-    whole = 0
-    num = 0
-    den = 1
-    
-    if len(numList) > 1:
-        whole = int(numList[0])
-        numList = numList[1].split('/')
-        num = numList[0]
-        den = numList[1]
-        return Mixed(whole, num, den)
-    elif numList[0].find('/') == -1:
-        return int(numList[0])
-    else:
-        numList = numList[0].split('/')
-        num = numList[0]
-        den = numList[1]
-        return Mixed(0, num, den)
+from mixed_fractions import Mixed
 
 #will not work for 'red bell pepper'
 def parse(foodStr):
     acceptMeasure []
-    #checkre '/doz' as well as list
     fractionList = []
     name = ''
-    num = None
-    strList = re.split("\s", foodStr)
+    num = ''
+    strList = foodStr.split()
 #[1,red,bell,pepper]
 #dont make red measurement
-    while (strList[0].isdigit() or strList[0].find('/')):
-        fractionList.append(strList[0])
+    for i in strList[:]:
+        if strList[0].find('/'):
+            num = num + ' ' + strList[0]
+        elif strList.isdigit():
+            num = strList[0]
         strList.pop(0)
-        if strList[0].isdigit() or strList[0].find('/') == -1:
+        
+        if not strList[0].isdigit() or strList[0].find('/') == -1:
             break
-    number = processNumber(fractionList)
-
-    
-    mType = strList[0]
-    strList.pop(0)
+    red bell pepper
+    if num == '':
+        amount = Mixed(1)
+    else:
+        amount = Mixed(num)
+    if num != '':
+        mType = strList[0]
+        strList.pop(0)
 
     for i in range(len(strList)):
         if i == len(strList) - 1:
@@ -192,6 +150,35 @@ for row in Food.aisles:
 print('open shopping list.txt for list.')
 #Count all of the ingredients after adding them up.
 '''
+def cleanPrint(aList, Dict=False):
+    """Prints inside of a list or dictionary. List is the Default print."""
+    count = len(aList)
+    counterDict = {}
+    
+    if Dict:    
+        for item in aList:
+            if item not in counterDict.keys():
+                counterDict[item] = 1
+            else:
+                counterDict[item] = counterDict[item] + 1
+
+        count = len(counterDict)
+        for key, value in counterDict.items():
+            if count == 1:
+                print(key + ": " + str(value))
+            else:
+                print(key + ": " + str(value) + ",")
+                count = count - 1
+    else:
+        for item in aList:
+            if count == 1:
+                print(item)
+            else:
+                print(item + ",")
+                count = count - 1
+                
+    return counterDict
+    
 #for item in store_list:
     #add another for loop
     #print(item)
