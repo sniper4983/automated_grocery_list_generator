@@ -2,34 +2,9 @@ import Food
 #copy recipes word for word
 class Recipe():
     '''Lists of recipes for automate grocery recipes contained in here'''
-    def __init__(self):
-        self.always_keep_stocked = ['red wine vinegar',
-                                    'extra virgin olive oil',
-                                    'salt','cumin',
-                                    'red pepper flakes',
-                                    'paprika',
-                                    'garlic powder',
-                                    'onion powder',
-                                    'crockpot liners',
-                                    'peeled garlic,',
-                                    'mayonaise',
-                                    'montreal steak seasoning',
-                                    'italian seasoning',
-                                    'pepper',
-                                    'bay leaves',
-                                    'beef broth',
-                                    'brown sugar',
-                                    'worchestershire sauce',
-                                    'parsley',
-                                    'honey',
-                                    'lemons/lemon juice',
-                                    'dijon mustard',
-                                    'butter',
-                                    'dill',
-                                    'apple cider vinegar',
-                                    'chili powder',]
+    def __init__(self): 
 
-
+        #1 frozen bag peppers = 2 peppers
         #1) recipes form new leaf wellness(excluding keep stocked list changed into a list on python
        #test and see if each recipe can be condenced
         self.chili_spiced_beef_and_carrots = ["1 lb beef chuck roast", "1 lb beef chuck roast", '1 lb baby carrots', '1 lb baby carrots','1 gallon freezer bag',]
