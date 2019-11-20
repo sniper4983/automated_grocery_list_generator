@@ -1,65 +1,62 @@
 import re
 from recipe import Recipe
-import Food
+import food
 from mixed_fractions import Mixed
 
-#will not work for 'red bell pepper'
 def parse(foodStr):
-    acceptMeasure []
-    fractionList = []
     name = ''
     num = ''
+    mType = ''
     strList = foodStr.split()
-#[1,red,bell,pepper]
-#dont make red measurement
+
     for i in strList[:]:
-        if strList[0].find('/'):
+        if strList[0].find('/') >= 0:
             num = num + ' ' + strList[0]
-        elif strList.isdigit():
+            strList.pop(0)
+        elif strList[0].isdigit():
             num = strList[0]
-        strList.pop(0)
-        
+            strList.pop(0)
+            continue
         if not strList[0].isdigit() or strList[0].find('/') == -1:
             break
-    red bell pepper
+        
+    #if no number is provided assume the number will be 1
     if num == '':
         amount = Mixed(1)
     else:
         amount = Mixed(num)
-    if num != '':
-        mType = strList[0]
-        strList.pop(0)
+    
+    for unit in food.units:
+        if strList[0].find(unit) != -1:
+            mType = strList[0]
+            strList.pop(0)
 
     for i in range(len(strList)):
         if i == len(strList) - 1:
             name = name + strList[i]
         else:
             name = name + strList[i] + ' '
-
-    return (number, mType, name)
+            
+    return (amount, mType, name, grocery.aisles[name])
 
 def updateShoppingList(item, groceries):
-    if not (item[2] in groceries)
-        groceries[item[2]] = Food(item[0], item[1], item[2])
+    if not (item[2] in groceries):
+        groceries[item[2]] = food.Food(item[0], item[1], item[2], item[3])
     else:
-        groceries[item[2]] =  groceries[item[2]] + Food(item[0], item[1], item[2])
+        groceries[item[2]] =  groceries[item[2]] + food.Food(item[0], item[1], item[2], item[3])
+    print(type(groceries[item[2]]))    
 
 recipes = Recipe()
 border = "="*11
-counterDict = {}
 new_item = ''
 grocerys = {}
 shopping_list = []
-food_list = []
-store_list = []
-with open('shopping list.txt', 'w') as f
-#these are the store aisles that will be used to eventually sort grocery list
-#or ask user to define aisles
-aisles = [['produce'],['meat', 'cheese', 'lunch meat',], ['dairy', 'eggs', 'juice', 'pies', 'yogurt', 'butter'],
-          ['frozen vegetables'], ['housewares'], ['cereal', 'coffee/tea'], ['baking', 'spices', 'PBJ'],
-          ['boxed dinner', 'canned meat', 'pasta/sauce'], ['soup', 'mexican', 'asian'], 
-          ['condiments', 'canned fruits/veggies & juice'], ['cookies & crackers'], ['candy, snacks, & chips'], ['bread'],
-         ['ice']]
+aisle = {'meat': [], 'produce': [], 'chesse': [], 'canned': [], 'dairy': [],
+         'mexican': [], 'housewares': [], 'frozen': [], 'pasta': [], 'spices': [],
+         'baking': [], 'cereal': [], 'crackers': [], }
+
+
+#file = open('shopping list.txt', 'w')
 
 while new_item.upper() != "DONE":
     print("What should we buy from the store?  \n")
@@ -67,7 +64,6 @@ while new_item.upper() != "DONE":
     print(border + "Remember: Recipes must be entered as a list in the program first"
           + border)
     
-    #asks for new items
     new_item = input("Enter a Recipe ")
     
     if new_item == 'monster cheese burgers':
@@ -121,64 +117,29 @@ while new_item.upper() != "DONE":
     elif new_item.upper() != "DONE":
         print("Your item is invalid, try again. Type HELP to see all items.")
 
-'''
-Shorter need to find to add aisle
-for ingredient in shopping_list:
-     new_item = parse(ingredient)
-    if not(new_item[1] in groceries):
-        groceries[new_item[1]] = Food(new_item[0][0], new_item[0][1])
-        #how do I add aisle, aisle dictionary
-    elif new_item[1] == ”chicken breast“:
- '''
 
 #convert string to food classes
-#assign aisle here, if user selects aisles to print list in
 for ingredient in shopping_list:
-    #(amount, measure, name)
-    ingredient_Tuple = parse(ingredient)
-    updateShoppingList(ingredient_tuple, groceries)
-    #one list seperated by keys value is itsfood class
- 
-#sort list by aisle  
-for row in Food.aisles:
-    f.write(row)
-    #print(row)
-    for food in groceries.values():#if food.aisle
+    #(amount, measure, name, aisle)
+    ingredient_tuple = parse(ingredient)
+    print(ingredient_tuple)
+    updateShoppingList(ingredient_tuple, grocerys)
+    print(grocerys[ingredient_tuple[2]])
+#sort list by aisle and print to file
+#sort big list into seperate lists
+for row in aisle.keys():
+    for food in grocerys.values():
         if food.aisle == row:
-            f.write(food)
-            #print(food)
-print('open shopping list.txt for list.')
-#Count all of the ingredients after adding them up.
-'''
-def cleanPrint(aList, Dict=False):
-    """Prints inside of a list or dictionary. List is the Default print."""
-    count = len(aList)
-    counterDict = {}
-    
-    if Dict:    
-        for item in aList:
-            if item not in counterDict.keys():
-                counterDict[item] = 1
-            else:
-                counterDict[item] = counterDict[item] + 1
+            aisle[row].append(food)
 
-        count = len(counterDict)
-        for key, value in counterDict.items():
-            if count == 1:
-                print(key + ": " + str(value))
-            else:
-                print(key + ": " + str(value) + ",")
-                count = count - 1
-    else:
-        for item in aList:
-            if count == 1:
-                print(item)
-            else:
-                print(item + ",")
-                count = count - 1
-                
-    return counterDict
-    
-#for item in store_list:
-    #add another for loop
-    #print(item)
+for row, food in aisle.items():
+    if food:
+        #file.write(row + '\n')
+        print(row)
+    for i in food:
+        print(i)
+        #file.write(str(i))
+           
+print('open shopping list.txt for list.')
+
+#file.close()
