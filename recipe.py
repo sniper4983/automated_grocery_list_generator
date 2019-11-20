@@ -1,22 +1,21 @@
-import Food
-#copy recipes word for word
 class Recipe():
     '''Lists of recipes for automate grocery recipes contained in here'''
-    def __init__(self): 
+    def __init__(self):
+        
+        #1) recipes from new leaf wellness: changed into a list on python.
+                #these recipes are incomplte
 
-        #1 frozen bag peppers = 2 peppers
-        #1) recipes form new leaf wellness(excluding keep stocked list changed into a list on python
-       #test and see if each recipe can be condenced
-        self.chili_spiced_beef_and_carrots = ["1 lb beef chuck roast", "1 lb beef chuck roast", '1 lb baby carrots', '1 lb baby carrots','1 gallon freezer bag',]
+        #condence lists to say total amount of itesm, not split up as is now
+        self.chili_spiced_beef_and_carrots = ["2 lb beef chuck roast", '2 lb baby carrots','1 gallon freezer bag',]
         self.monster_cheese_burgers = ['1 lb ground beef', 'american cheese']
         self.tuscan_steak_and_green_peppers = ['1 lb sliced & fat trimmed boneless sirloin tip roast', '1 frozen bell peppers','1 onion', '1 14.5oz DICED tomatoes', '1 gallon freezer bag',]
-        self.beef_and_cabbage_soup = ['1 small cabage', '1 small onion', 'x carrots', '1 14.5oz diced tomatoes', '1 gallon freezer bag',]
-        self.sloppy_joes = ['1 small onion','1 medium red bell pepper', '1 15oz tomato sauce', '1 gallon freezer bag',]
+        self.beef_and_cabbage_soup = ['1  small cabage', '1 onion', 'x carrots', '1 14.5oz diced tomatoes', '1 gallon freezer bag',]
+        self.sloppy_joes = ['1 onion','1 red bell pepper', '1 15oz tomato sauce', '1 gallon freezer bag',]
         self.chicken_spinach_alfredo = ['1 heavy cream', '1 heavy cream', '1 parmesean cheese',  '1 spinach', '1 gallon freezer bag',]
         self.chicken_tikka_masala = ['1 15oz tomato sauce','1 15oz tomato sauce','1 heavy cream', '1 gallon freezer bag',]
-        self.shredded_chicken_fajitas = ['1 medium red bell pepper', '1 gallon freezer bag',]
+        self.shredded_chicken_fajitas = ['1 red bell pepper', '1 gallon freezer bag',]
         self.chicken_cordon_bleu_casserole = ['1 extra wide egg noodles','1 bone in ham bone steak', '1 swiss cheese', '1 sour cream', '1 italian bread crumbs', '1 gallon freezer bag',]
-        self.chicken_and_sausage_orzo = ['1 italian sausage', '1 8oz tomato sauce', '1 orzo','1 gallon freezer bag',]
+        self.chicken_and_sausage_orzo = ['1 italian_sausage', '1 8oz tomato sauce', '1 orzo','1 gallon freezer bag',]
         self.italian_sausage_rigatoni = ['1 ground italian sausage' , '1 14.5oz diced tomatoes','1 14.5oz diced tomatoes', '1 onion', '4.5 cups rigatoni', '1 gallon freezer bag']
         self.gvb_soup_turkey = ['1 ground turkey','1 carrots', '1 zucchini',]
         self.tuscaan_torellini_soup = ['1 24oz pasta sauce', '1 cannellini beans', '1 carrot', '1 onion', '1 green beans', '1 frozen cheese tortellini', '1 gallon freezer bag']
@@ -33,12 +32,11 @@ class Recipe():
         self.chicken_tortilla_soup = ['1 onion', '1 red bell pepper', '1 14.5oz diced tomatoes', '1.5 cups frozen corn', '1 black beans', '1 tablespoon chili powder', '1/2 teaspoon salt', '1/2 teaspoon ground cumin','1/2 teaspoon garlic powder','4 cups low-sodium chicken broth*','4 corn tortillas*',]
 
     def __str__(self):
-        rep = 'Options are: meats,\nvegtables, suggested_sides, \nchili_spiced_beef_and_carrots, \nmonster cheese burgers, \ntuscan steak and green peppers, \nbeef and cabbage soup, \nsloppy joes, chicken spinach alfredo'
+        rep = 'Options are: chili spiced beef and carrots, \nmonster cheese burgers, \ntuscan steak and green peppers, \nbeef and cabbage soup, \nsloppy joes, chicken spinach alfredo'
         rep += ', \nchicken tikka masala, \nshredded chicken fajitas, \nchicken cordon bleu casserole, \nchicken and sausage orzo, \nitalian sausage rigatoni, \ngvb soup turkey, \ntuscaan torellini soup, \nwhite chicken chili'
         rep += ', \nranch popcorn chicken, \ncheesy chicken veggie casserole, \npulled pork, \nsuasage and peppers, \npotato corn chowder, \njalepeno and bacon, \nindian butter chicken, \ncreamy chicken penne, \nsalsa verde chicken'
         rep += ', \nministrone soup w ground beef\nchicken tortilla soup'
         return rep
-
     
     '''
      self.meats = ['ground_beef','beef chuck shouulder', '1_Lb__chicken_breast','ground_turkey', 'ham', 'sliced _&_fat_trimmed_boneless_sirloin_tip_roast',]
