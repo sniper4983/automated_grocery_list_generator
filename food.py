@@ -1,3 +1,135 @@
+aisles = {}
+aisles['beef chuck roast'] = 'meat'
+aisles['ground beef'] = 'meat'
+aisles['sliced & fat trimmed boneless sirloin tip roast'] = 'meat'
+aisles['chicken breast'] = 'meat'
+aisles['chicken theighs'] = 'meat'
+aisles['bone in ham bone steak'] = 'meat'
+aisles['pork shoulder'] = 'meat'
+aisles['baby carrots'] = 'produce'
+aisles['onion'] = 'produce'
+aisles['red bell pepper'] = 'produce'
+aisles['small cabbage'] = 'produce'
+aisles['carrots'] = 'produce'
+aisles['spinich'] = 'produce'
+aisles['zucchini'] = 'produce'
+aisles['rainbow peppers'] = 'produce'
+aisles['butternut squash'] = 'produce'
+aisles['ground turkey'] = 'meat'
+aisles['bacon'] = 'meat'
+aisles['american cheese'] = 'cheese'
+aisles['cheddar cheese'] = 'cheese'
+aisles['celery'] = 'produce'
+aisles['ground italian sausage'] = 'meat'
+aisles['swiss cheese'] = 'cheese'
+aisles['diced tomatoes'] = 'canned'
+aisles['heavy whipping cream'] = 'dairy'
+aisles['egg'] = 'eggs'
+aisles['orzo'] = 'pasta'
+aisles['italian sausage'] = 'meat'
+aisles['shredded cheddar'] = 'cheese'
+aisles['monterey jack cheese,'] = 'cheese'
+aisles['milk'] = 'dairy'
+aisles['tortillas'] = 'mexican'
+aisles['salsa verde'] = 'mexican'
+aisles['heavy cream'] = 'dairy'
+aisles['freezer bag'] = 'housewares'
+aisles['frozen bell peppers'] = 'frozen'
+aisles['parmesean cheese'] = 'pasta'
+aisles['tomato sauce'] = 'canned'
+aisles['extra wide egg noodles'] = 'pasta'
+aisles['italian bread crumbs'] = 'pasta'
+aisles['rigatoni'] = 'pasta'
+aisles['green onions'] = 'produce'
+aisles['red potatoes'] = 'produce'
+aisles['chili powder'] = 'spices'
+aisles['salt'] = 'spices'
+aisles['ground cumin'] = 'spices'
+aisles['frozen corn'] = 'frozen'
+aisles['cream cheese'] = 'dairy'
+aisles['dark red kidney beans'] = 'canned'
+aisles['black beans'] = 'canned'
+aisles['penne pasta'] = 'pasta'
+aisles['butter'] = 'dairy'
+aisles['jalepeno'] = 'produce'
+aisles['elbow macoroni'] = 'pasta'
+aisles['evaporated milk'] = 'baking'
+aisles['cannellini_beans'] = 'canned'
+aisles['green beans'] = 'canned'
+aisles['pasta sauce'] = 'pasta'
+aisles['sour cream'] = ''
+aisles['frozen cheese tortellini'] = 'frozen'
+aisles['cornflakes'] = 'cereal'
+aisles['ritz'] = 'crackers'
+
+#add more as needed
+units = ('oz', 'cup', 'lb', 'teaspoon', 'Tablespoon', 'gallon',)
+
+#not printing correctly, blank
+class Food():
+  """Base class for all food in shopping list."""
+  #aisle where food is located in store
+  def __init__(self, amount=0, mType='', name='', aisle =''):
+    self.aisle = aisle
+    #amount already already parsed unless nothing passed, will ever be default?
+    self.amount = amount 
+    self.mType = mType
+    self.name = name;
+    #roundUp = Estimate()
+    #ie 1 14.5oz. red pepper  
+   
+  def __str__(self):
+    rep = ''
+    if self.amount and self.mType and self.name:
+      rep = str(self.amount) +  " "  + self.mType + " " + self.name
+    elif not self.amount and self.mType and self.name:
+      rep = self.mType + " " + self.name
+    elif self.amount and self.name and not self.mType:
+      rep = str(self.amount) +  " " + self.name
+    elif not self.amount and not self.mType and self.name:
+      rep = str(self.name)
+    return rep
+
+  def __add__(self, rhs):
+    self.amount = self.amount + rhs.amount
+    return self
+    
+  
+  def __radd__(self, lhs):
+    self.amount = lhs + self.amount
+    return self
+  
+  def __sub__(self, rhs):
+    self.amount =  self.amount - rhs
+    return self
+  
+  def __rsub__(self, lhs):
+    self.amount =  lhs - self.amount
+    return self
+  
+  def __mul__(self, rhs):
+    self.amount = self.amount * rhs
+    return self
+  
+  def __rmul__(self, lhs):
+    self.amont =  self.amount * lhs
+    return self
+  
+  def __truediv__(self, rhs):
+    self.amount = self.amount / rhs
+    return self
+  
+  def __rtruediv__(self, lhs):
+    self.amount =  lhs / self.amount
+    return self
+  
+  '''
+  vary for each food item. All Fractions should round up to total number of items needed. 10 oz, 12 oz would be 2 10 oz, etc?
+  where and how'''
+  def __mod__(self, rhs):
+    pass
+  #all foods round up to closest container
+  #how will I estimate each food to round up
 
 #Dry and liquid Measure Equivalents: nested list in food or recipe
 '''
@@ -15,6 +147,7 @@ American Standard      American Standard             Metric
    4 cups or 1 quart        32 fl. oz.              1000 ml or 1 liter
    1 gallon                 128 fl. oz.             4 liters
  
+
 Dry Measure Equivalents
  	 	 	 
  3 teaspoons	 1 tablespoon	 1/2 ounce	 14.3 grams
@@ -25,116 +158,9 @@ Dry Measure Equivalents
  12 tablespoons	 3/4 cup	 6 ounces	 .375 pound
  32 tablespoons	 2 cups	 16 ounces	 1 pound
 '''
+class Estimate():
+  pass
 
-ailes = {}
-ailes['beef chuck roast'] = 'meat'
-ailes['ground beef'] = 'meat'
-ailes['sliced & fat trimmed boneless sirloin tip roast'] = 'meat'
-ailes['chicken breast'] = 'meat'
-ailes['chicken theighs'] = 'meat'
-ailes['bone in ham bone steak'] = 'meat'
-ailes['pork shoulder'] = 'meat'
-ailes['baby carrots'] = 'produce'
-ailes['onion'] = 'produce'
-ailes['red bell pepper'] = 'produce'
-ailes['small cabbage'] = 'produce'
-ailes['carrots'] = 'produce'
-ailes['spinich'] = 'produce'
-ailes['zucchini'] = 'produce'
-ailes['rainbow_peppers'] = 'produce'
-ailes['butternut squash'] = 'produce'
-ailes['ground turkey'] = 'meat'
-ailes['bacon'] = 'meat'
-ailes['american cheese'] = 'cheese'
-ailes['cheddar cheese'] = 'cheese'
-ailes['celery'] = 'produce'
-ailes['ground italian sausage'] = 'meat'
-ailes['swiss cheese'] = 'cheese'
-ailes['diced tomatoes'] = 'canned'
-ailes['heavy whipping cream'] = 'dairy'
-ailes['egg'] = 'eggs'
-ailes['orzo'] = 'pasta'
-ailes['italian sausage'] = 'meat'
-ailes['shredded cheddar'] = 'cheese'
-ailes['monterey jack cheese,'] = 'cheese'
-ailes['milk'] = 'dairy'
-ailes['tortillas'] = 'mexican'
-ailes['salsa verde'] = 'mexican'
-ailes['heavy cream'] = 'dairy'
-ailes['freezer bag'] = 'housewares'
-ailes['frozen bell peppers'] = 'frozen'
-ailes['parmesean cheese'] = 'italian'
-ailes['tomato sauce'] = 'canned'
-ailes['extra wide egg noodles'] = 'italian'
-ailes['italian bread crumbs'] = 'italian'
-ailes['rigatoni'] = 'italian'
-ailes['green onions'] = 'produce'
-ailes['red potatoes'] = 'produce'
-ailes['chili powder'] = 'spices'
-ailes['salt'] = 'spices'
-ailes['ground cumin'] = 'spices'
-ailes['frozen corn'] = 'frozen'
-ailes['cream cheese'] = 'dairy' #?location
-ailes['dark red kidney beans'] = 'canned'
-ailes['black beans'] = 'canned'
-ailes['penne pasta'] = 'italian'
-ailes['butter'] = 'dairy'
-ailes['jalepeno'] = 'produce'
-ailes['elbow macoroni'] = 'italian'
-ailes['evaporated milk'] = 'baking'
-ailes['cannellini beans'] = 'canned'
-ailes['green beans'] = 'canned' #fresh?
-ailes['pasta sauce'] = 'pasta'
-ailes['sour cream'] = 'dairy'
-ailes['frozen cheese tortellini'] = 'frozen'
-ailes['cornflakes'] = 'cereal'
-ailes['ritz'] = 'crackers'
-
-
-class Food():
-  """Base class for all food in shopping list."""
-  #aisle where food is located in store
-  
-  def __init__(self, amount=0, measure='', name=''):
-    self.ailes = ailes[name]
-    self.amount = amount
-    self.name = name;
-   
-  def __str__(self):
-    if not name:
-      return amount
-    else:
-      return amount +  " " + name
-    
-  def __add__(self, rhs):
-    return self.amount + rhs
-  
-  def __radd__(self, lhs):
-    return lhs + self.amount
-  
-  def __sub__(self, rhs):
-    return self.amount - rhs
-  
-  def __rsub__(self, lhs):
-    return lhs - self.amount
-  
-  def __mul__(self, rhs):
-    return self.amount * rhs
-  
-  def __rmul__(self, lhs):
-    return self.amount * lhs
-  
-  def __truediv__(self, rhs):
-    return self.amount / rhs
-  
-  def __rtruediv__(self, lhs):
-    return lhs / self.amount
-  
-  '''
-  vary for each food item. All Fractions should round up to total number of items needed. 10 oz, 12 oz would be 2 10 oz, etc?
-  where and how'''
-  def __mod__(self, rhs):
-    pass
 '''
 #---foods need to be modified, unit of measure or name clean up all ailes so it matches main file and dictionary---
 #meats
