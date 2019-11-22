@@ -44,7 +44,12 @@ def updateShoppingList(item, groceries):
         groceries[item[2]] = food.Food(item[0], item[1], item[2], item[3])
     else:
         groceries[item[2]] =  groceries[item[2]] + food.Food(item[0], item[1], item[2], item[3])
-    print(type(groceries[item[2]]))    
+    print(type(groceries[item[2]]))
+    
+#TODO: get whole package amounts from groceries dictionary. ie 1/4 teaspoon salt = 1 container salt
+def updateAmounts(groceries):
+    pass
+
 
 recipes = Recipe()
 border = "="*11
