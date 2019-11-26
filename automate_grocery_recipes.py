@@ -117,6 +117,12 @@ while new_item.upper() != "DONE":
         shopping_list.extend(recipes.salsa_verde_chicken)
     elif new_item == 'chicken tortilla soup':
         shopping_list.extend(recipes.chicken_tortilla_soup)
+    elif new_item == 'creamy potato soup':
+        shopping_list.extend(recipes.creamy_potato_soup)
+    elif new_item == 'chicken taco soup':
+        shopping_list.extend(recipes.chicken_taco_soup)
+    elif new_item == 'taco chili w cornbread topping':
+        shopping_list.extend(recipes.taco_chili)
     elif new_item.upper() == "HELP":
         print(recipes)
     elif new_item.upper() != "DONE":
