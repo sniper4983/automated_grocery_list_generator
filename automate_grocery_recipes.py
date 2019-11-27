@@ -1,6 +1,5 @@
-import re
 from recipe import Recipe
-import food
+import Food
 from mixed_fractions import Mixed
 
 def parse(foodStr):
@@ -26,7 +25,7 @@ def parse(foodStr):
     else:
         amount = Mixed(num)
     
-    for unit in food.units:
+    for unit in [y for x in [Food.units, Food.other] for y in x]:
         if strList[0].find(unit) != -1:
             mType = strList[0]
             strList.pop(0)
@@ -41,27 +40,22 @@ def parse(foodStr):
 
 def updateShoppingList(item, groceries):
     if not (item[2] in groceries):
-        groceries[item[2]] = food.Food(item[0], item[1], item[2], item[3])
+        groceries[item[2]] = Food.Food(item[0], item[1], item[2], item[3])
+        print(grocerys[ingredient_tuple[2]])
     else:
-        groceries[item[2]] =  groceries[item[2]] + food.Food(item[0], item[1], item[2], item[3])
-    print(type(groceries[item[2]]))
-    
-#TODO: get whole package amounts from groceries dictionary. ie 1/4 teaspoon salt = 1 container salt
-def updateAmounts(groceries):
-    pass
-
+        groceries[item[2]] =  groceries[item[2]] + Food.Food(item[0], item[1], item[2], item[3])
+        
 
 recipes = Recipe()
 border = "="*11
 new_item = ''
 grocerys = {}
 shopping_list = []
-aisle = {'meat': [], 'produce': [], 'chesse': [], 'canned': [], 'dairy': [],
-         'mexican': [], 'housewares': [], 'frozen': [], 'pasta': [], 'spices': [],
-         'baking': [], 'cereal': [], 'crackers': [], }
+aisle = {'meat': [], 'produce': [], 'misc': [], 'canned': [], 'dairy': [],
+         'frozen': [], 'seasonings': [], 'baking': [], }
 
 
-#file = open('shopping list.txt', 'w')
+file = open('shopping list.txt', 'w')
 
 while new_item.upper() != "DONE":
     print("What should we buy from the store?  \n")
@@ -93,10 +87,10 @@ while new_item.upper() != "DONE":
         shopping_list.extend(recipes.chicken_and_sausage_orzo)
     elif new_item == 'italian sausage rigatoni':
         shopping_list.extend(recipes.italian_sausage_rigatoni)
-    elif new_item == 'gvb soup turkey':
-        shopping_list.extend(recipes.gvb_soup_turkey)
-    elif new_item == 'tuscaan torellini soup':
-        shopping_list.extend(recipes.tuscaan_torellini_soup)
+    elif new_item == 'garden vegetable soup':
+        shopping_list.extend(recipes.gvs_turkey)
+    elif new_item == 'tuscan tortellini soup':
+        shopping_list.extend(recipes.tuscan_tortellini_soup)
     elif new_item == 'white chicken chili':
         shopping_list.extend(recipes.white_chicken_chili)
     elif new_item == 'ranch popcorn chicken':
@@ -105,8 +99,8 @@ while new_item.upper() != "DONE":
         shopping_list.extend(recipes.cheesy_chicken_veggie_casserole)
     elif new_item == 'pulled pork':
         shopping_list.extend(recipes.pulled_pork)
-    elif new_item == 'suasage and peppers':
-        shopping_list.extend(recipes.suasage_and_peppers)
+    elif new_item == 'sausage and peppers':
+        shopping_list.extend(recipes.sausage_and_peppers)
     elif new_item == 'potato corn chowder':
         shopping_list.extend(recipes.potato_corn_chowder)
     elif new_item == 'jalepeno and bacon':
@@ -123,6 +117,10 @@ while new_item.upper() != "DONE":
         shopping_list.extend(recipes.chicken_taco_soup)
     elif new_item == 'taco chili w cornbread topping':
         shopping_list.extend(recipes.taco_chili)
+    elif new_item == 'creamy chicken penne':
+        shopping_list.extend(recipes.creamy_chicken_penne)
+    elif new_item == 'ministrone_soup_w_ground_beef':
+        shopping_list.extend(recipes.ministrone_soup_w_ground_beef)
     elif new_item.upper() == "HELP":
         print(recipes)
     elif new_item.upper() != "DONE":
@@ -131,13 +129,13 @@ while new_item.upper() != "DONE":
 
 #convert string to food classes
 for ingredient in shopping_list:
-    #(amount, measure, name, aisle)
+    (amount, measure, name, aisle)
     ingredient_tuple = parse(ingredient)
     print(ingredient_tuple)
     updateShoppingList(ingredient_tuple, grocerys)
-    print(grocerys[ingredient_tuple[2]])
+    
+
 #sort list by aisle and print to file
-#sort big list into seperate lists
 for row in aisle.keys():
     for food in grocerys.values():
         if food.aisle == row:
@@ -145,12 +143,14 @@ for row in aisle.keys():
 
 for row, food in aisle.items():
     if food:
-        #file.write(row + '\n')
-        print(row)
+        if row == 'meat':
+            file.write(row + '\n')
+        else:
+            file.write('\n' + row + '\n')
+        print(row) #delete prints when done
     for i in food:
         print(i)
-        #file.write(str(i))
+        file.write(str(i)  + '\n')
            
 print('open shopping list.txt for list.')
-
-#file.close()
+file.close()
