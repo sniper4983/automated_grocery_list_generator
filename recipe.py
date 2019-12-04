@@ -36,8 +36,8 @@ class Recipe():
         
     def __str__(self):
         #tabular format, this list is too long (name\t\tname\t\tname\n)
-        rep = 'Options are: chili spiced beef and carrots, \nmonster cheese burgers, \ntuscan steak and green peppers, \nbeef and cabbage soup, \nsloppy joes, chicken spinach alfredo'
-        rep += ', \nchicken tikka masala, \nshredded chicken fajitas, \nchicken cordon bleu casserole, \nchicken and sausage orzo, \nitalian sausage rigatoni, \ngarden vegetable soup, \ntuscaan torellini soup, \nwhite chicken chili'
+        rep = 'Options are: chili spiced beef and carrots\t\tmonster cheese burgers\t\ttuscan steak and green peppers\nbeef and cabbage soup\t\tsloppy joes\t\tchicken spinach alfredo'
+        rep += '\nchicken tikka masala\t\tshredded chicken fajitas\t\tchicken cordon bleu casserole\nchicken and sausage orzo\t\titalian sausage rigatoni\ngarden vegetable soup\t\ttuscaan torellini soup\t\twhite chicken chili\n'
         rep += ', \nranch popcorn chicken, \ncheesy chicken veggie casserole, \npulled pork, \nsuasage and peppers, \npotato corn chowder, \njalepeno and bacon, \nindian butter chicken, \ncreamy chicken penne, \nsalsa verde chicken'
-        rep += ', \nministrone soup w ground beef\nchicken tortilla soup,\nchicken taco soup,\ntaco chili w cornbread topping\ncreamy potato soup'
+        rep += 'ministrone soup w ground beef\t\tchicken tortilla soup\t\tchicken taco soup\ntaco chili w cornbread topping\t\tcreamy potato soup' #newline next
         return rep
