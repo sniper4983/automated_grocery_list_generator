@@ -34,10 +34,20 @@ class Recipe():
         self.chicken_taco_soup = ['1 lb chicken breast', '1 onion', '2 cloves garlic', '1 cup frozen corn', '1 28oz diced tomatoes', '1 4oz diced mild green chilies', '1 Tablespoon chili powder', '1 teaspoon pepper', '1/2 teaspoon ground oregano', '1 gallon freezer bag',]
         self.creamy_potato_soup = ['3 lb russet potatoes', '4 celery', '2 onion', '4 cloves garlic', '1 8oz frozen broccoli florets', '1/2 teaspoon pepper', '1 12oz evaporated milk',]
         
+        self.names = [['chili spiced beef', 'monster cheese burgers', 'tuscan steak and green peppers'],
+                      ['beef and cabbage soup', 'sloppy joes', 'chicken spinach alfredo'],
+                      ['chicken tikka masala', 'shredded chicken fajitas', 'chicken cordon blue'],
+                      ['chicken ans sausage orzo', 'italian susage rigatoni', 'ground turkey soup'],
+                      ['tuscan tortellini soup', 'ranch popcorn chicken', 'cheesy chicken veggie caserole'],
+                      ['pulled pork', 'sausage and peppers', 'potato corn chowder'],
+                      ['jalepno and bacon', 'indian butter chickan', 'creamy chicken penne'],
+                      ['salse verde chicken', 'ministrone soup w ground beef', 'cicken tortilla soup'],
+                      ['taco chili', 'chicken taco soup', 'creamy potato soup'],]
+        
     def __str__(self):
-        #tabular format, this list is too long (name\t\tname\t\tname\n)
-        rep = 'Options are: chili spiced beef and carrots\t\tmonster cheese burgers\t\ttuscan steak and green peppers\nbeef and cabbage soup\t\tsloppy joes\t\tchicken spinach alfredo'
-        rep += '\nchicken tikka masala\t\tshredded chicken fajitas\t\tchicken cordon bleu casserole\nchicken and sausage orzo\t\titalian sausage rigatoni\ngarden vegetable soup\t\ttuscaan torellini soup\t\twhite chicken chili\n'
-        rep += ', \nranch popcorn chicken, \ncheesy chicken veggie casserole, \npulled pork, \nsuasage and peppers, \npotato corn chowder, \njalepeno and bacon, \nindian butter chicken, \ncreamy chicken penne, \nsalsa verde chicken'
-        rep += 'ministrone soup w ground beef\t\tchicken tortilla soup\t\tchicken taco soup\ntaco chili w cornbread topping\t\tcreamy potato soup' #newline next
+        rep = ''
+        col_width = max(len(word) for row in self.names for word in row) + 2  # padding
+        for row in self.names:
+            rep = rep + "".join(word.ljust(col_width) for word in row)
+            rep = rep + '\n'
         return rep
