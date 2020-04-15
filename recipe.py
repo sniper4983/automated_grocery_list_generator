@@ -34,15 +34,48 @@ class Recipe():
         self.chicken_taco_soup = ['1 lb chicken breast', '1 onion', '2 cloves garlic', '1 cup frozen corn', '1 28oz diced tomatoes', '1 4oz diced mild green chilies', '1 Tablespoon chili powder', '1 teaspoon pepper', '1/2 teaspoon ground oregano', '1 gallon freezer bag',]
         self.creamy_potato_soup = ['3 lb russet potatoes', '4 celery', '2 onion', '4 cloves garlic', '1 8oz frozen broccoli florets', '1/2 teaspoon pepper', '1 12oz evaporated milk',]
         
-        self.names = [['chili spiced beef', 'monster cheese burgers', 'tuscan steak and green peppers'],
+       self.names = [['chili spiced beef', 'monster cheese burgers', 'tuscan steak and green peppers'],
                       ['beef and cabbage soup', 'sloppy joes', 'chicken spinach alfredo'],
                       ['chicken tikka masala', 'shredded chicken fajitas', 'chicken cordon blue'],
                       ['chicken ans sausage orzo', 'italian susage rigatoni', 'ground turkey soup'],
                       ['tuscan tortellini soup', 'ranch popcorn chicken', 'cheesy chicken veggie caserole'],
                       ['pulled pork', 'sausage and peppers', 'potato corn chowder'],
                       ['jalepno and bacon', 'indian butter chickan', 'creamy chicken penne'],
-                      ['salse verde chicken', 'ministrone soup w ground beef', 'cicken tortilla soup'],
-                      ['taco chili', 'chicken taco soup', 'creamy potato soup'],]
+                      ['salse verde chicken', 'minestrone soup w ground beef', 'cicken tortilla soup'],
+                      ['taco chili', 'chicken taco soup', 'creamy potato soup'],
+                      ['chinese sweet and sour pork', 'japanese beef teriyaki', 'korean bbq chicken'],
+                      ['cilantro lime chicken', 'cranberry chicken', 'honey bourbon chicken'],
+                      ['lebanese sweet potato lentil chili', 'singaporean chicken rice stew', 'thai green curry chicken'],
+                      ['bbq maple ribs', 'beef and quinoa stuffed peppers', 'beef and sweet potato stew'],
+                      ['black bean sweet potato chili', 'cabbage rolls with wild rice', 'cherry pot roast with sweet potatoes'],
+                      ['chicken artichoke marinara', 'chicken lentil curry chili', 'chicken and wild rice soup'],
+                      ['citrus chicken', 'ginger peach pork roast with green beans', 'italian chicken and quinoa soup'],
+                      ['italian meatballs', 'lemon chicken with baby spinach', 'maple pork roast with cinnamon applesauce'],
+                      ['ratatouille', 'savory indian chickpeas', 'artichoke chicken'],
+                      ['chicken enchiladas', 'honey garlic chicken', 'honey mustard chicken'],
+                      ['orange chicken', 'parmesan crusted chicken', 'thai chicken'],
+                      ['white chicken chili', 'zesty bbq chicken', 'chicken and pepper stir fry'],
+                      ['chicken and sweet potato hash', 'hawaiian chicken and peppers', 'honey garlic chicken and peas'],
+                      ['tuscan chicken tortellini', 'bbq chicken', 'chicken cheesesteaks'],
+                      ['honey dijon chicken', 'lemon pepper chicken', 'orange ginger chicken'],
+                      ['red pepper chicken', 'shredded buffalo chicken', 'roasted chicken with honey lemon carrots and red potatoes'],
+                      ['asian chicken lettuce wraps', 'breaded pork chops', 'mediterranean shredded pork pita pockets'],
+                      ['pear pork tenderloin', 'chinese sweet and sour pork', 'jalapeno lime shredded pork tacos'],
+                      ['turkey chili with butternut squash', 'turkey burger macaroni', 'rice and bean burrito bowl'],
+                      ['black bean enchilada stack', 'cheesy eggplant bake', 'mexican stuffed peppers'],
+                      ['thai pineapple curry', 'three bean chili', 'zucchini lasagna'],
+                      ['spagetti squash with marinara sauce', 'spiced butternut squash soup', 'spicy garlic lime chicken'],
+                      ['stuffed pepper soup', 'sweet potato and pork burrito bowl', 'sweet potato split pea soup'],
+                      ['sweet n spicy thai beef', 'bbq baby back ribs', 'classic pot roast'],
+                      ['grandmas beef stew', 'hamburger potato soup', 'italian style pot roast'], 
+                      ['orange ginger shredded beef with soy glaze', 'spicy beef curry stew', 'super simple meatball veggie soup'],
+                      ['taco chili with cornbread', 'coconut chickpea curry', 'curried lentils'],
+                      ['oatmeal chip cookies', 'spiced carrot bread', 'ground beef stroganoff'],
+                      ['monster burgers', 'steak stir fry and bok choy', 'tex mex beef and cabbage'],
+                      ['creamy potato soup', 'minestrone soup', 'bread pudding'],
+                      ['chocolate cake', 'easy blueberry crisp'],
+                     ]
+
         
     def __str__(self):
         rep = ''
