@@ -206,7 +206,7 @@ aisles['turmeric'] = 'seasonings'
 aisles['bagged coleslaw mix'] = 'produce'
 
 
-units = ('oz', 'cup', 'lb', 'teaspoon', 'Tablespoon', 'gallon',)
+units = ('oz', 'cup', 'lb', 'teaspoon', 'Tablespoon', 'gallon', 'quart')
 other = ('slices', 'box', 'clove',) 
 
 class Food():
