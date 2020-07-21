@@ -1,49 +1,15 @@
 from recipe import Recipe
-import Food
-from mixed_fractions import Mixed
-
-def parse(foodStr):
-    name = ''
-    num = ''
-    mType = ''
-    strList = foodStr.split()
-
-    for i in strList[:]:
-        if strList[0].find('/') >= 0:
-            num = num + ' ' + strList[0]
-            strList.pop(0)
-        elif strList[0].isdigit():
-            num = strList[0]
-            strList.pop(0)
-            continue
-        if not strList[0].isdigit() or strList[0].find('/') == -1:
-            break
-        
-    #if no number is provided assume the number will be 1
-    if num == '':
-        amount = Mixed(1)
-    else:
-        amount = Mixed(num)
-    
-    for unit in [y for x in [grocery.units, grocery.other] for y in x]:
-        if strList[0].find(unit) != -1:
-            mType = strList[0]
-            strList.pop(0)
-
-    for i in range(len(strList)):
-        if i == len(strList) - 1:
-            name = name + strList[i]
-        else:
-            name = name + strList[i] + ' '
-            
-    return (amount, mType, name, grocery.aisles[name])
+import Food as F.
 
 def updateShoppingList(item, groceries):
-    if not (item[2] in groceries):
-        groceries[item[2]] = grocery.Food(item[0], item[1], item[2], item[3])
+    '''start with an empty groceries dictionary and build list of food from Food objects
+    that contain individual items of food from recipee.
+    '''
+    item.parse()
+    if not (item.name in groceries):
+        groceries[item.name] = item
     else:
-        groceries[item[2]] =  groceries[item[2]] + grocery.Food(item[0], item[1], item[2], item[3])
-        
+        groceries[item.name] = groceries[item.name] + item
 
 recipes = Recipe()
 border = "="*11
@@ -53,6 +19,7 @@ shopping_list = []
 names = recipes.cookbook.keys()
 aisle = {'meat': [], 'produce': [], 'misc': [], 'canned': [], 'dairy': [],
          'frozen': [], 'seasonings': [], 'baking': [], }
+foodList = []
 
 file = open('shopping list.txt', 'w')
 
@@ -74,31 +41,33 @@ while new_item.upper() != "DONE":
             print("Your item is invalid, try again. Type HELP to see all items.")
         new_item = input("Enter a Recipe: ")
 
-#convert string to food classes
-for ingredient in shopping_list:
-    #(amount, measure, name, aisle)
-    ingredient_tuple = parse(ingredient)
-    updateShoppingList(ingredient_tuple, grocerys)
-        
+#convert recipe to list of ingredients
+for item in shopping_list:
+    currentFood = F.Food(item)
+    foodList.append(currentFood)
+    updateShoppingList(currentFood, grocerys)
+
 #sort list by aisle and print to file
 for row in aisle.keys():
     for food in grocerys.values():
+        #if aisle equals row
         if food.aisle == row:
             aisle[row].append(food)
 
-
 #add conversions in here somehow
-
 for row, food in aisle.items():
     if food:
         if row == 'meat':
-            file.write(row + '\n')
+            file.write(str(row) + '\n')
         else:
             file.write('\n' + row + '\n')
-        print(row) #delete prints when done
     for i in food:
-        print(i)
+        print(str(i))
         file.write(str(i)  + '\n')
                
 print('open shopping list.txt for list.')
 file.close()
+
+if foodList:
+    for i in foodList:
+        del i
